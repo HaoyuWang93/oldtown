@@ -1,0 +1,97 @@
+
+<!doctype html>
+<html>
+<head>
+  <title>TLL-2040/12/20</title>
+<script src="aframe/aframe.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="css/custom.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<div style='position: fixed;
+bottom: 15px;
+left: 20px;
+width:100%;
+text-align: left;
+z-index: 1;'>
+  <a href="6-eliise.html"><button class="button">PREVIOUS</button></a>
+</div>
+
+<div style='position: fixed;
+top: 15px;
+left: 20px;
+width:100%;
+text-align: left;
+z-index: 1;'>
+  <a href="https://haoyuwang93.github.io/anotherfuture/"><button class="button">HOME</button></a>
+</div>
+
+</head>
+
+<body>
+
+<a-assets>
+  <img id="sky" src="images/morning.jpg">
+  <img id="back" src="images/direction/back.png">
+</a-assets>
+
+  <div id="preload">
+    <p id="intro">
+        12/20/2040<br>
+        9:14 GMT+2<br>
+        The snow has finally stopped;<br>
+        Eliise is still in her headset;<br>
+        I'd better go back before the drones<br>
+        come for morning testing session...
+    </p>
+  </div>
+
+  <script>
+  window.addEventListener("load", function(){
+      setInterval(pippo, 5000);
+  });
+  function pippo(){
+      var load_screen = document.getElementById("preload");
+      document.body.removeChild(load_screen);
+  }
+
+  AFRAME.registerComponent("weblink", {
+  schema: {
+    url: {
+      default: ""
+    }
+  },
+  init: function() {
+    this.el.addEventListener("click", (e) => {
+      window.location = this.data.url;
+    })
+  }
+})
+</script>
+
+<a-scene cursor="rayOrigin: mouse" vr-mode-ui="arEnabled:false" loading-screen="dotsColor: white; backgroundColor: black">
+  <a-sky id="skyid" src="#sky" rotation="0 -90 0"></a-sky>
+
+  <a-text class="chat"
+   line-height=55 width="1.2" rotation="0 0 0"
+   color="white" align=center position="0 2.55 -1"
+   value="...I don't know why
+   but as I digest last night's talk,
+   these towers seem to grow
+   taller and come closer..."
+  </a-text>
+
+  <a-image id="out" class="chat"
+    src= "#back"
+    animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
+    width="1" height="1"
+    position="-2 -2 2.5"
+    rotation="-90 90 30"
+    opacity=0.8
+    weblink="url: 8-morning2.html">
+  </a-image>
+
+</a-scene>
+
+</body>
+</html

@@ -1,0 +1,238 @@
+
+<!doctype html>
+<html>
+<head>
+  <title>TLL-2040/12/19</title>
+<script src="aframe/aframe.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="css/custom.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<div style='position: fixed;
+bottom: 15px;
+left: 20px;
+width:100%;
+text-align: left;
+z-index: 1;'>
+  <a href="1-tube1.html"><button class="button">PREVIOUS</button></a>
+</div>
+
+<div style='position: fixed;
+  bottom: 15px;
+  left: 120px;
+  width:100%;
+  text-align: left;
+  z-index: 1;'>
+    <a href="3-nomad.html"><button class="button">SKIP</button></a>
+</div>
+
+<div style='position: fixed;
+top: 15px;
+left: 20px;
+width:100%;
+text-align: left;
+z-index: 1;'>
+  <a href="https://haoyuwang93.github.io/anotherfuture/"><button class="button">HOME</button></a>
+</div>
+
+</head>
+
+<body>
+
+<a-assets>
+  <img id="sky" src="images/kopli.jpg">
+  <img id="phone" src="images/screen/phone19.png">
+  <img id="reply" src="images/screen/re.png">
+  <img id="hello" src="images/screen/hello.png">
+  <img id="check" src="images/direction/check.png">
+</a-assets>
+
+  <script>
+ AFRAME.registerComponent("re1", {
+    init: function() {
+       var pieces = document.getElementsByClassName("chat")
+       this.el.addEventListener("click", e => {
+         for (let piece of pieces) {
+           piece.emit("show1")}
+       }, {once: true})
+     }
+  })
+
+  AFRAME.registerComponent("re2", {
+    init: function() {
+       var pieces = document.getElementsByClassName("chat")
+       this.el.addEventListener("click", e => {
+         for (let piece of pieces) {
+           piece.emit("show2")}
+       }, {once: true})
+     }
+  })
+
+  AFRAME.registerComponent("re3", {
+    init: function() {
+       var pieces = document.getElementsByClassName("chat")
+       this.el.addEventListener("click", e => {
+         for (let piece of pieces) {
+           piece.emit("show3")}
+       }, {once: true})
+     }
+  })
+
+  AFRAME.registerComponent("weblink", {
+  schema: {
+    url: {
+      default: ""
+    }
+  },
+  init: function() {
+    this.el.addEventListener("click", (e) => {
+      window.location = this.data.url;
+    })
+  }
+})
+</script>
+
+<a-scene cursor="rayOrigin: mouse" vr-mode-ui="arEnabled:false" loading-screen="dotsColor: white; backgroundColor: black">
+  <a-sky id="skyid" src="#sky" rotation="0 -90 0"></a-sky>
+
+  <a-image src="#phone"
+  width="1" height="1"
+  rotation="0 -45 0" position="1.2 1.6 -1.2"></a-image>
+
+  <a-text class="chat"
+    line-height=55 width="1" rotation="0 -45 0"
+    color="#AAFF80" align=left position="0.65 1.6 -1.1"
+    value="come on! video live lets go!"
+    animation__up1="startEvents: show1; property: position; to: 0.65 1.8 -1.1; dur: 200"
+    animation__hide1="startEvents: show1; property: visible; to: false; delay: 4300">
+  </a-text>
+
+  <a-image class="chat" id="rep1"
+   src= "#reply"
+   width="0.2" height="0.1" rotation="0 -45 0" position="0.9 1.3 -0.9"
+   animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
+   animation__hide1="startEvents: show1; property: visible; to: false"
+   animation__up1="startEvents: show1; property: position; to: 0.9 10 -0.9"
+   re1>
+  </a-image>
+
+  <a-text class="chat"
+   opacity="0" line-height=55 width="1" rotation="0 -45 0"
+   color="white" align=right position="1.2 1.6 -0.7"
+   value="too much interference going on,
+   strange for satellite 5.0 though"
+   animation__show1="startEvents: show1; property: opacity; to: 1; dur: 200; delay: 200"
+   animation__up1="startEvents: show1; property: position; to: 1.2 1.8 -0.7; dur: 200; delay: 4300"
+   animation__hide2="startEvents: show2; property: visible; to: false; delay: 3300">
+  </a-text>
+
+  <a-text class="chat"
+   opacity="0" line-height=55 width="1" rotation="0 -45 0"
+   color="white" align=right position="1.2 1.6 -0.7"
+   value="there actually are a few tubemates
+   around, shall i go ask?"
+   animation__show1="startEvents: show1; property: opacity; to: 1; dur: 200; delay: 4500"
+   animation__up2="startEvents: show2; property: position; to: 1.2 1.8 -0.7; dur: 200; delay: 3300"
+   animation__hide2="startEvents: show2; property: visible; to: false; delay: 7800">
+  </a-text>
+
+  <a-image id="greet" class="chat"
+    visible="false"
+    src= "#hello" width="0.5" height="0.25"
+    position="-2.5 1.7 -2.5"
+    rotation="0 45 0"
+    animation__show1="startEvents: show1; property: visible; to: true; delay: 5500"
+    animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
+    animation__hide1="startEvents: show2; property: visible; to: false"
+    re2>
+  </a-image>
+
+  <a-text class="chat"
+    opacity="0"
+    line-height=55 width="6" rotation="0 0 0"
+    color="white" align=center position="-1.5 1.75 -2"
+    value="..."
+    animation__show2="startEvents: show2; property: opacity; to: 1; dur: 500; delay: 500"
+    animation__hide2="startEvents: show2; property: opacity; from: 1; to: 0; dur: 500; delay: 2500">
+  </a-text>
+
+  <a-text class="chat"
+    opacity="0" line-height=55 width="1" rotation="0 -45 0"
+    color="#AAFF80" align=left position="0.65 1.6 -1.1"
+    value="i wont talk to a suitless
+    covid suspect in this scenario"
+    animation__show2="startEvents: show2; property: opacity; to: 1; delay: 3500"
+    animation__up2="startEvents: show2; property: position; to: 0.65 1.8 -1.1; dur: 200; delay: 7800"
+    animation__hide3="startEvents: show3; property: visible; to: false">
+  </a-text>
+
+  <a-text class="chat"
+    opacity="0" line-height=55 width="1" rotation="0 -45 0"
+    color="#AAFF80" align=left position="0.65 1.6 -1.1"
+    value="why not try walk around a bit"
+    animation__show2="startEvents: show2; property: opacity; to: 1; delay: 8000"
+    animation__up3="startEvents: show3; property: position; to: 0.65 1.8 -1.1; dur: 200"
+    animation__hide3="startEvents: show3; property: visible; to: false; delay: 4800">
+  </a-text>
+
+  <a-image class="chat" id="rep3"
+   src= "#reply" visible="false"
+   width="0.2" height="0.1" rotation="0 -45 0" position="0.9 -10 -0.9"
+   animation__up2="startEvents: show2; property: position; to: 0.9 1.3 -0.9; delay: 8500"
+   animation__on2="startEvents: show2; property: visible; to: true; delay: 9000"
+   animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
+   animation__hide3="startEvents: show3; property: visible; to: false"
+   re3>
+  </a-image>
+
+  <a-text class="chat"
+   opacity="0" line-height=55 width="1" rotation="0 -45 0"
+   color="white" align=right position="1.2 1.6 -0.7"
+   value="wait...i think i find why interference"
+   animation__show3="startEvents: show3; property: opacity; to: 1; dur: 200; delay: 200"
+   animation__up3="startEvents: show3; property: position; to: 1.2 1.8 -0.7; dur: 200; delay: 4800"
+   animation__hide3="startEvents: show3; property: visible; to: false; delay: 8800">
+  </a-text>
+
+  <a-text class="chat"
+   opacity="0" line-height=55 width="1" rotation="0 -45 0"
+   color="white" align=right position="1.2 1.6 -0.7"
+   value="the building printers on the east are
+   still working, not just dumped"
+   animation__show3="startEvents: show3; property: opacity; to: 1; dur: 200; delay: 5000"
+   animation__up3="startEvents: show3; property: position; to: 1.2 1.8 -0.7; dur: 200; delay: 8800"
+   animation__hide3="startEvents: show3; property: visible; to: false; delay: 13800">
+  </a-text>
+
+  <a-text class="chat"
+   opacity="0" line-height=55 width="1" rotation="0 -45 0"
+   color="white" align=right position="1.2 1.6 -0.7"
+   value="i remember ABB had band sharing
+   issues with those old gen printers"
+   animation__show3="startEvents: show3; property: opacity; to: 1; dur: 200; delay: 9000"
+   animation__up3="startEvents: show3; property: position; to: 1.2 1.8 -0.7; dur: 200; delay: 13800">
+  </a-text>
+
+  <a-text class="chat"
+    opacity="0" line-height=55 width="1" rotation="0 -45 0"
+    color="#AAFF80" align=left position="0.65 1.6 -1.1"
+    value="make sense as they can only use
+    these models in wasteland now"
+    animation__show3="startEvents: show3; property: opacity; to: 1; delay: 14000">
+  </a-text>
+
+  <a-image id="out" class="chat"
+    visible="false"
+    src= "#check"
+    animation__show3="startEvents: show3; property: visible; to: true; delay: 15000"
+    animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
+    width="1.5" height="1.5"
+    position="5 0 0"
+    rotation="-75 -90 0"
+    weblink="url: 3-nomad.html">
+    </a-image>
+
+</a-scene>
+
+</body>
+</html

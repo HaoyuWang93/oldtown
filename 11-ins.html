@@ -1,0 +1,74 @@
+
+<!doctype html>
+<html>
+
+<head>
+  <title>TLL-2040/12/22</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="css/custom.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <div style='position: fixed;
+  bottom: 15px;
+  left: 20px;
+  width:100%;
+  text-align: left;
+  z-index: 1;'>
+    <a href="10-tube2.html"><button class="button">PREVIOUS</button></a>
+</div>
+
+  <div style='position: fixed;
+  top: 15px;
+  left: 20px;
+  width:100%;
+  text-align: left;
+  z-index: 1;'>
+    <a href="https://haoyuwang93.github.io/anotherfuture/"><button class="button">HOME</button></a>
+</div>
+
+</head>
+
+<style>
+.showMe {
+  animation: cssAnimation 0s 6s forwards;
+  visibility: hidden;
+}
+
+@keyframes cssAnimation {
+  to   { visibility: visible; }
+}
+</style>
+
+<body>
+    <body style="background-color:black;">
+
+      <div id="preload">
+        <p id="intro">
+            12/22/2040<br>
+            <br>
+            One day left on my arrival quarantine;<br>
+            but my new plan doesn't need a #negative tag;<br>
+            time to leave for my journey...
+        </p>
+      </div>
+
+      <script>
+      window.addEventListener("load", function(){
+          setInterval(pippo, 5000);
+      });
+      function pippo(){
+          var load_screen = document.getElementById("preload");
+          document.body.removeChild(load_screen);
+      }
+      </script>
+
+<div>
+<img class="socialimg" src="images/ins.jpg" alt="Social Media Photo"></img>
+<p id="video-sub">Mount ready! @artjomdiy < -this guy is truly a genius diy master!</p>
+</div>
+
+
+<div class="showMe" id="next"><a href="12-leave.html"><button id="proceed">NEXT</button></a></div>
+
+</body>
+</html

@@ -1,0 +1,132 @@
+
+<!doctype html>
+<html>
+<head>
+  <title>TLL-2040/12/19</title>
+<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="dist/aframe-particle-system-component.min.js"></script>
+<link rel="stylesheet" href="css/custom.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<div style='position: fixed;
+bottom: 15px;
+left: 20px;
+width:100%;
+text-align: left;
+z-index: 1;'>
+  <a href="4-nomad2.html"><button class="button">PREVIOUS</button></a>
+</div>
+
+<div style='position: fixed;
+top: 15px;
+left: 20px;
+width:100%;
+text-align: left;
+z-index: 1;'>
+  <a href="https://haoyuwang93.github.io/anotherfuture/"><button class="button">HOME</button></a>
+</div>
+
+</head>
+
+<body>
+
+<a-assets>
+  <img id="sky" src="images/snow.jpg">
+  <img id="phone" src="images/screen/phone194.png">
+  <img id="battery" src="images/screen/battery.png">
+  <img id="gogogo" src="images/direction/gogogo.png">
+</a-assets>
+
+<div id="preload">
+  <p id="intro">
+      Dammit!<br>
+      The poor signal won't even deliver<br>
+      a snowstorm alert!
+  </p>
+</div>
+
+<script>
+window.addEventListener("load", function(){
+    setInterval(pippo, 40);
+});
+function pippo(){
+    var load_screen = document.getElementById("preload");
+    document.body.removeChild(load_screen);
+}
+
+  AFRAME.registerComponent("weblink", {
+  schema: {
+    url: {
+      default: ""
+    }
+  },
+  init: function() {
+    this.el.addEventListener("click", (e) => {
+      window.location = this.data.url;
+    })
+  }
+})
+</script>
+
+<a-scene cursor="rayOrigin: mouse" vr-mode-ui="arEnabled:false" loading-screen="dotsColor: white; backgroundColor: black">
+  <a-entity position="0 15 -15" particle-system=
+  "preset: snow; particleCount: 40000; maxAge: 1;
+  rotationAxis: z; rotationAngle: 4; size: 6; rotationAngleSpread: 1;
+  velocityValue: 0 300 0;
+  positionSpread: 500 800 500">
+  </a-entity>
+
+  <a-sky id="skyid" src="#sky" rotation="0 180 0"></a-sky>
+
+  <a-image src="#phone"
+  width="0.4" height="0.4"
+  rotation="-45 0 0" position="0 1.2 -0.6"></a-image>
+
+  <a-image id="rep1"
+   src= "#battery"
+   width="0.3" height="0.3" rotation="-45 0 0" position="0 1.2 -0.55"
+   animation__flash="property: opacity; from: 1; to: 0; dur: 1000; dir: alternate; loop: true">
+  </a-image>
+
+  <a-text
+   line-height=55 width="1.8" rotation="0 0 0"
+   color="white" align=center position="0 1.4 -1"
+   value="DAMMIT!">
+  </a-text>
+
+  <a-text
+   line-height=55 width="1" rotation="0 -90 0"
+   color="white" align=center position="1 2 0"
+   value="...and these signal interrupters still can print...">
+  </a-text>
+
+  <a-text
+   line-height=55 width="3.5" rotation="0 180 0"
+   color="#CCFFFF" align=right position="2.1 1.67 3"
+   value="HEY
+   YOU! THE ONE
+   OUTSIDE!"
+   animation__flash="property: opacity; from: 1; to: 0; dur: 500; dir: alternate; loop: true">
+  </a-text>
+
+  <a-text
+   line-height=55 width="6" rotation="0 -90 0"
+   color="#CCFFFF" align=center position="2 1.7 3.5"
+   value="COME IN!"
+      animation__flash="property: opacity; from: 1; to: 0; dur: 500; dir: alternate; loop: true">
+  </a-text>
+
+  <a-image id="out" class="chat"
+    src= "#gogogo"
+    animation__flash="property: opacity; from: 0.8; to: 0; dur: 500; dir: alternate; loop: true"
+    width="1.5" height="1.5"
+    position="5 3.6 7"
+    rotation="0 180 0"
+    weblink="url: 6-eliise.html">
+    </a-image>
+
+</a-scene>
+
+</body>
+</html

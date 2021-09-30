@@ -1,0 +1,261 @@
+custom.css
+<TEXT>
+
+/* Global */
+body {
+    background: black;
+}
+
+#preload {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    background: black;
+}
+
+#wrapper-dialogues {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -60%);
+    padding: 10px;
+    width: 90%;
+    max-width:800px;
+    height:60%;
+    overflow:scroll;
+    overflow-x: hidden;
+  }
+
+/* Scalebar */
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: black;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #555;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Dialogues */
+
+#chat-fr {
+position: relative;
+top:1vh;
+line-height: 1.5;
+font-size: 1.2em;
+color: #FFB2B2;
+font-style: italic;
+text-align: left;
+margin-right: 25%;
+}
+
+
+#chat-re {
+position: relative;
+top:1vh;
+line-height: 1.5;
+font-size: 1.2em;
+color: white;
+text-align: right;
+margin-left:25%;
+}
+
+/*button style */
+.button {
+  background-color: #F5F5F5;
+  border-style: double;
+  border-radius: 8px;
+  border-color: black;
+  color: black;
+  padding: 6px 4px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  margin: 2px 2px;
+  cursor: pointer;
+}
+
+#reply {
+  background-color: black;
+  border-style: solid;
+  border-radius: 8px;
+  border-color: white;
+  color: white;
+  padding: 8px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.2em;
+  margin: 2px 2px;
+  cursor: pointer;
+  position:fixed;
+  bottom:15%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  z-index:999;
+}
+
+#login {
+  background-color: black;
+  border-style: solid;
+  border-radius: 8px;
+  border-color: white;
+  color: white;
+  padding: 8px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.2em;
+  line-height:1.5;
+  margin: 2px 2px;
+  cursor: pointer;
+  position:fixed;
+  top:60%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  z-index:999;
+}
+
+#proceed {
+  background-color: black;
+  border-style: solid;
+  border-radius: 8px;
+  border-color: white;
+  color: white;
+  padding: 8px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.2em;
+  margin: 2px 2px;
+  cursor: pointer;
+  position:fixed;
+  bottom:0;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  z-index:999;
+}
+
+/* texts */
+#intro {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  line-height: 2;
+  font-size: 1.5em;
+  color: white;
+  text-align: center;
+  padding:10px;
+}
+
+#monologue {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  line-height: 2;
+  font-size: 1.5em;
+  color: white;
+  font-style: italic;
+  text-align: center;
+  padding:10px;
+}
+
+#video-sub {
+  position: fixed;
+  top:80%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  line-height: 1.5;
+  font-size: 1.5em;
+  color: white;
+  font-style: italic;
+  text-align: center;
+  padding:10px;
+}
+
+/* Media */
+.video {
+  position:fixed;
+    width:auto; height:auto;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    max-height:70%;
+}
+
+.socialimg {
+  position:fixed;
+    width:auto; height:auto;
+    top: 45%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    max-height:70%;
+}
+
+@media screen and (max-width: 768px) {
+  #monograph {
+    font-size: 1.2em;
+  }
+  #video-sub {
+    font-size: 1.2em;
+  }
+  #chat-fr {
+    font-size: 1.2em;
+  }
+  #chat-re {
+    font-size: 1.2em;
+  }
+  .video {
+    width:100%; height: auto;
+  }
+
+  .socialimg {
+    width:100%; height: auto;
+  }
+
+  @media screen and (max-width: 350px) {
+    #intro {
+      font-size: 1.2em;
+    }
+    #monograph {
+      font-size: 1em;
+    }
+    #video-sub {
+      font-size: 1em;
+    }
+    #chat-fr {
+      font-size: 1em;
+    }
+    #chat-re {
+      font-size: 1em;
+    }
+
+/* hidden ar button */
+div.a-enter-ar {
+  visibility: hidden;
+}

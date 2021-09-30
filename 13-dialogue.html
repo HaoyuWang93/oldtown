@@ -1,0 +1,228 @@
+
+<!doctype html>
+<html>
+
+<head>
+  <title>TLL-2040/12/24</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="css/custom.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <div style='position: fixed;
+  bottom: 15px;
+  left: 20px;
+  width:100%;
+  text-align: left;
+  z-index: 1;'>
+    <a href="12-leave.html"><button class="button">PREVIOUS</button></a>
+  </div>
+
+  <div style='position: fixed;
+    bottom: 15px;
+    left: 120px;
+    width:100%;
+    text-align: left;
+    z-index: 1;'>
+      <a href="14-end.html"><button class="button">SKIP</button></a>
+  </div>
+
+  <div style='position: fixed;
+  top: 15px;
+  left: 20px;
+  width:100%;
+  text-align: left;
+  z-index: 1;'>
+    <a href="https://haoyuwang93.github.io/anotherfuture/"><button class="button">HOME</button></a>
+  </div>
+
+</head>
+
+<body>
+    <div class="hide" id="buttonre"><button id="reply">REPLY</button></div>
+    <div class="hide" id="button2"><button id="reply">REPLY</button></div>
+    <div class="hide" id="button3"><button id="reply">REPLY</button></div>
+    <div class="hide" id="button4"><button id="reply">REPLY</button></div>
+    <div class="hide" id="button5"><button id="reply">REPLY</button></div>
+    <div class="hide" id="button6"><button id="reply">REPLY</button></div>
+    <div class="hide" id="next"><a href="14-end.html"><button id="reply">NEXT</button></a></div>
+
+<div id= "wrapper-dialogues">
+      <button id="login">Airbnb Message from @workloft<br><br>18:22 - 12/23/2040</button>
+  <div class="hide" id="fr1"><p id="chat-fr">Good evening,</p></div>
+  <div class="hide" id="fr2"><p id="chat-fr">We are deeply sorry to inform that your Parnu Bay loft room won't be available at this time;</p></div>
+  <div class="hide" id="fr3"><p id="chat-fr">your refund is in process and will be available in 12 hours</p></div>
+  <div class="hide" id="fr4"><p id="chat-fr">this is also unexpected to us so please let me know if you need further help.</p></div>
+
+  <div class="hide" id="re1"><p id="chat-re">dont worry, i understand,</p></div>
+  <div class="hide" id="re2"><p id="chat-re">just saw the news about the outbreak</p></div>
+  <div class="hide" id="re3"><p id="chat-re">r u guys okay out there?</p></div>
+  <div class="hide" id="fr5"><p id="chat-fr">We've had TAU back in summer so we know about the measures,</p></div>
+  <div class="hide" id="fr6"><p id="chat-fr">But most worksites of the reservation have to pause for a while.</p></div>
+
+  <div class="hide" id="re4"><p id="chat-re">sorry to hear that, i know how hard it is to maintain a labor reservation these days</p></div>
+  <div class="hide" id="re5"><p id="chat-re">i mean tax free wont be enough against 5.0 industries</p></div>
+  <div class="hide" id="fr7"><p id="chat-fr">We are already grateful for tax free,</p></div>
+  <div class="hide" id="fr8"><p id="chat-fr">The government can at best sustain our job for a few years,</p></div>
+  <div class="hide" id="fr9"><p id="chat-fr">the future is online afterall.</p></div>
+  <div class="hide" id="fr10"><p id="chat-fr">Now we basically feed on nomads' taxes,</p></div>
+  <div class="hide" id="fr11"><p id="chat-fr">no wonder why they don't like us.</p></div>
+
+  <div class="hide" id="re6"><p id="chat-re">dont look down to urself man</p></div>
+  <div class="hide" id="re7"><p id="chat-re">u have real live cultures in ur place that we've lost already</p></div>
+  <div class="hide" id="re8"><p id="chat-re">and we r the ones who brought robots to steal ur jobs</p></div>
+  <div class="hide" id="fr12"><p id="chat-fr">Are you a nomad?</p></div>
+
+  <div class="hide" id="re9"><p id="chat-re">yep, and an e-estonian precisely</p></div>
+  <div class="hide" id="fr13"><p id="chat-fr">E-Estonian</p></div>
+  <div class="hide" id="fr14"><p id="chat-fr">FUCK OFF!</p></div>
+
+  <div class="hide" id="re10"><p id="chat-re">...is there something wrong?</p></div>
+  <div class="hide" id="re11"><p id="chat-re">hello?</p></div>
+  <div class="hide" id="block"><p style="text-align: center" id="chat-fr">*[Your account has been blocked by @workloft<br>You can't reply to this conversation]*</p></div>
+</div>
+
+<script>
+
+$(document).ready(function() {
+  $("#login").click(function() {
+    if($("#fr1,#fr2,#fr3,#fr4,#buttonre").hasClass("hide"))
+    {
+       window.setTimeout(function() {
+           $("#fr1").toggleClass("hide");}, 1000);
+       window.setTimeout(function() {
+           $("#fr2").toggleClass("hide");}, 3000);
+       window.setTimeout(function() {
+           $("#fr3").toggleClass("hide");}, 6000);
+       window.setTimeout(function() {
+           $("#fr4").toggleClass("hide");}, 9000);
+       window.setTimeout(function() {
+           $("#buttonre").toggleClass("hide");}, 10000);
+       $('#login').hide();
+    }
+else $("#fr1,#fr2,#fr3,#fr4,#buttonre").toggleClass("hide");
+  });
+});
+
+$(document).ready(function() {
+  $("#buttonre").click(function() {
+    if($("#re1,#re2,#re3,#fr5,#fr6,#button2").hasClass("hide"))
+    {
+       window.setTimeout(function() {
+           $("#re1").toggleClass("hide");});
+       window.setTimeout(function() {
+           $("#re2").toggleClass("hide");}, 1500);
+       window.setTimeout(function() {
+           $("#re3").toggleClass("hide");}, 4000);
+       window.setTimeout(function() {
+           $("#fr5").toggleClass("hide");}, 7000);
+       window.setTimeout(function() {
+           $("#fr6").toggleClass("hide");}, 10000);
+       window.setTimeout(function() {
+           $("#button2").toggleClass("hide");}, 11000);
+       $('#buttonre').hide();
+    }
+else $("#re1,#re2,#re3,#fr5,#fr6,#button2").toggleClass("hide");
+  });
+});
+
+$(document).ready(function() {
+  $("#button2").click(function() {
+    if($("#re4,#re5,#fr7,#fr8,#fr9,#fr10,#fr11,#button3").hasClass("hide"))
+    {
+       window.setTimeout(function() {
+           $("#re4").toggleClass("hide");});
+       window.setTimeout(function() {
+           $("#re5").toggleClass("hide");}, 3000);
+       window.setTimeout(function() {
+           $("#fr7").toggleClass("hide");}, 6000);
+       window.setTimeout(function() {
+           $("#fr8").toggleClass("hide");}, 8000);
+       window.setTimeout(function() {
+           $("#fr9").toggleClass("hide");}, 11000);
+       window.setTimeout(function() {
+           $("#fr10").toggleClass("hide");}, 13000);
+       window.setTimeout(function() {
+           $("#fr11").toggleClass("hide");}, 15000);
+       window.setTimeout(function() {
+           $("#button3").toggleClass("hide");}, 16000);
+       $('#button2').hide();
+    }
+else $("#re4,#re5,#fr7,#fr8,#fr9,#fr10,#fr11,#button3").toggleClass("hide");
+  });
+});
+
+$(document).ready(function() {
+  $("#button3").click(function() {
+    if($("#re6,#re7,#re8,#fr12,#button4").hasClass("hide"))
+    {
+       window.setTimeout(function() {
+           $("#re6").toggleClass("hide");});
+       window.setTimeout(function() {
+           $("#re7").toggleClass("hide");}, 2500);
+       window.setTimeout(function() {
+           $("#re8").toggleClass("hide");}, 6000);
+       window.setTimeout(function() {
+           $("#fr12").toggleClass("hide");}, 10000);
+       window.setTimeout(function() {
+           $("#button4").toggleClass("hide");}, 11000);
+       $('#button3').hide();
+    }
+else $("#re6,#re7,#re8,#fr12,#button4").toggleClass("hide");
+  });
+});
+
+$(document).ready(function() {
+  $("#button4").click(function() {
+    if($("#re9,#fr13,#fr14,#button5").hasClass("hide"))
+    {
+       window.setTimeout(function() {
+           $("#re9").toggleClass("hide");});
+       window.setTimeout(function() {
+           $("#fr13").toggleClass("hide");}, 4000);
+       window.setTimeout(function() {
+           $("#fr14").toggleClass("hide");}, 8000);
+       window.setTimeout(function() {
+           $("#button5").toggleClass("hide");}, 9000);
+       $('#button4').hide();
+    }
+else $("#re9,#fr13,#fr14,#button5").toggleClass("hide");
+  });
+});
+
+$(document).ready(function() {
+  $("#button5").click(function() {
+    if($("#re10,#re11,#block,#button6").hasClass("hide"))
+    {
+       window.setTimeout(function() {
+           $("#re10").toggleClass("hide");});
+       window.setTimeout(function() {
+           $("#re11").toggleClass("hide");}, 3000);
+       window.setTimeout(function() {
+           $("#block").toggleClass("hide");}, 3500);
+       window.setTimeout(function() {
+           $("#next").toggleClass("hide");}, 4500);
+       $('#button5').hide();
+    }
+else $("#re10,#re11,#block,#button6").toggleClass("hide");
+  });
+});
+
+
+window.setInterval(function() {
+  var elem = document.getElementById('wrapper-dialogues');
+  elem.scrollTop = elem.scrollHeight;
+}, 500);
+
+</script>
+
+<style>
+.hide {
+    display:none
+}
+body {
+    background: black;
+}
+</style>
+
+</body>
+</html

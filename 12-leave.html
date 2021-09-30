@@ -1,0 +1,294 @@
+
+<!doctype html>
+<html>
+<head>
+  <title>TLL-2040/12/23</title>
+<script src="aframe/aframe.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="css/custom.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<div style='position: fixed;
+bottom: 15px;
+left: 20px;
+width:100%;
+text-align: left;
+z-index: 1;'>
+  <a href="11-ins.html"><button class="button">PREVIOUS</button></a>
+</div>
+
+<div style='position: fixed;
+  bottom: 15px;
+  left: 120px;
+  width:100%;
+  text-align: left;
+  z-index: 1;'>
+    <a href="13-dialogue.html"><button class="button">SKIP</button></a>
+</div>
+
+<div style='position: fixed;
+top: 15px;
+left: 20px;
+width:100%;
+text-align: left;
+z-index: 1;'>
+  <a href="https://haoyuwang93.github.io/anotherfuture/"><button class="button">HOME</button></a>
+</div>
+
+</head>
+
+<body>
+
+<a-assets>
+  <img id="sky" src="images/last.jpg">
+  <img id="phone" src="images/screen/phone23.png">
+  <img id="message" src="images/screen/eliise.png">
+  <img id="reply" src="images/screen/re.png">
+  <img id="go" src="images/direction/go.png">
+</a-assets>
+
+  <script>
+
+  AFRAME.registerComponent("talk0", {
+    init: function() {
+       var pieces = document.getElementsByClassName("chat")
+       this.el.addEventListener("click", e => {
+         for (let piece of pieces) {
+           piece.emit("show0")}
+       }, {once: true})
+     }
+  })
+
+  AFRAME.registerComponent("re1", {
+    init: function() {
+       var pieces = document.getElementsByClassName("chat")
+       this.el.addEventListener("click", e => {
+         for (let piece of pieces) {
+           piece.emit("show1")}
+       }, {once: true})
+     }
+  })
+
+  AFRAME.registerComponent("re2", {
+    init: function() {
+       var pieces = document.getElementsByClassName("chat")
+       this.el.addEventListener("click", e => {
+         for (let piece of pieces) {
+           piece.emit("show2")}
+       }, {once: true})
+     }
+  })
+
+  AFRAME.registerComponent("re3", {
+    init: function() {
+       var pieces = document.getElementsByClassName("chat")
+       this.el.addEventListener("click", e => {
+         for (let piece of pieces) {
+           piece.emit("show3")}
+       }, {once: true})
+     }
+  })
+
+  AFRAME.registerComponent("weblink", {
+  schema: {
+    url: {
+      default: ""
+    }
+  },
+  init: function() {
+    this.el.addEventListener("click", (e) => {
+      window.location = this.data.url;
+    })
+  }
+})
+</script>
+
+<a-scene cursor="rayOrigin: mouse" vr-mode-ui="arEnabled:false" loading-screen="dotsColor: black; backgroundColor: #F1F1F1">
+  <a-sky id="skyid" src="#sky" rotation="0 -90 0"></a-sky>
+
+  <a-image src="#phone"
+  width="1" height="1"
+  rotation="0 -90 0" position="1.2 1.6 0"></a-image>
+
+  <a-image class="chat" id="message"
+   src= "#message"
+   width="0.25" height="0.25" rotation="0 -90 0" position="0.9 1.35 0"
+   animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
+   animation__hide0="startEvents: show0; property: visible; to: false"
+   animation__up0="startEvents: show0; property: position; to: 0.9 10 0"
+   talk0>
+  </a-image>
+
+  <a-text class="chat"
+    opacity="0" line-height=55 width="1" rotation="0 -90 0"
+    color="#CCFFFF" align=left position="1 1.6 -0.4"
+    value="Hi, are you in oldtown?"
+    animation__show0="startEvents: show0; property: opacity; to: 1; dur: 200"
+    animation__up0="startEvents: show0; property: position; to: 1 1.8 -0.4; dur: 200; delay: 1800"
+    animation__hide1="startEvents: show1; property: visible; to: false">
+  </a-text>
+
+  <a-text class="chat"
+    opacity="0" line-height=55 width="1" rotation="0 -90 0"
+    color="#CCFFFF" align=left position="1 1.6 -0.4"
+    value="We have a party with some Kalamaja
+    returnees, do you know the bar NoKu?"
+    animation__show0="startEvents: show0; property: opacity; to: 1; dur: 200; delay: 2000"
+    animation__up1="startEvents: show1; property: position; to: 1 1.8 -0.4; dur: 200"
+    animation__hide1="startEvents: show1; property: visible; to: false; delay: 4800">
+  </a-text>
+
+  <a-image class="chat" id="rep1"
+   src= "#reply"
+   width="0.2" height="0.1" rotation="0 -90 0" position="0.9 -10 0"
+   visible="false"
+   animation__on0="startEvents: show0; property: position; to: 0.9 1.3 0; delay: 2500"
+   animation__show0="startEvents: show0; property: visible; to: true; delay: 3000"
+   animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
+   animation__hide1="startEvents: show1; property: visible; to: false"
+   animation__up1="startEvents: show1; property: position; to: 0.9 10 0"
+   re1>
+  </a-image>
+
+  <a-text class="chat"
+   opacity="0" line-height=55 width="1" rotation="0 -90 0"
+   color="white" align=right position="1 1.6 0.4"
+   value="Eliise! good to hear from u! sorry but we
+   will have to meet another time"
+   animation__show1="startEvents: show1; property: opacity; to: 1; dur: 200; delay: 200"
+   animation__up1="startEvents: show1; property: position; to: 1 1.8 0.4; dur: 200; delay: 4800"
+   animation__hide1="startEvents: show1; property: visible; to: false; delay: 10800">
+  </a-text>
+
+  <a-text class="chat"
+   opacity="0" line-height=55 width="1" rotation="0 -90 0"
+   color="white" align=right position="1 1.6 0.4"
+   value="im driving south with my diy vehicle
+   built from printer, ur signal boosting
+   codes really helped a lot!"
+   animation__show1="startEvents: show1; property: opacity; to: 1; dur: 200; delay: 5000"
+   animation__up1="startEvents: show1; property: position; to: 1 1.8 0.4; dur: 200; delay: 10800"
+   animation__hide1="startEvents: show1; property: visible; to: false; delay: 16800">
+  </a-text>
+
+  <a-text class="chat"
+    opacity="0" line-height=55 width="1" rotation="0 -90 0"
+    color="#CCFFFF" align=left position="1 1.6 -0.4"
+    value="Ah... going to Parnu or Tartu? But they
+    won't open now, both have to reinforce
+    their COVID defence after TAU outbreak"
+    animation__show1="startEvents: show1; property: opacity; to: 1; dur: 200; delay: 11000"
+    animation__up1="startEvents: show1; property: position; to: 1 1.8 -0.4; dur: 200; delay: 16800"
+    animation__hide2="startEvents: show2; property: visible; to: false">
+  </a-text>
+
+  <a-text class="chat"
+    opacity="0" line-height=55 width="1" rotation="0 -90 0"
+    color="#CCFFFF" align=left position="1 1.6 -0.4"
+    value="Wait...don't tell me its something with
+    our conversation about oldtown"
+    animation__show1="startEvents: show1; property: opacity; to: 1; dur: 200; delay: 17000"
+    animation__up2="startEvents: show2; property: position; to: 1 1.8 -0.4; dur: 200"
+    animation__hide2="startEvents: show2; property: visible; to: false; delay: 4800">
+  </a-text>
+
+  <a-image class="chat" id="rep2"
+   src= "#reply"
+   width="0.2" height="0.1" rotation="0 -90 0" position="1 -10 0"
+   visible="false"
+   animation__on1="startEvents: show1; property: position; to: 0.9 1.3 0; delay: 17500"
+   animation__show1="startEvents: show1; property: visible; to: true; delay: 18000"
+   animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
+   animation__hide2="startEvents: show2; property: visible; to: false"
+   animation__up2="startEvents: show2; property: position; to: 0.9 10 0"
+   re2>
+  </a-image>
+
+  <a-text class="chat"
+   opacity="0" line-height=55 width="1" rotation="0 -90 0"
+   color="white" align=right position="1 1.6 0.4"
+   value="yes or no...i have to rethink about
+   tallinn and my nomad life after that"
+   animation__show2="startEvents: show2; property: opacity; to: 1; dur: 200; delay: 200"
+   animation__up2="startEvents: show2; property: position; to: 1 1.8 0.4; dur: 200; delay: 4800"
+   animation__hide2="startEvents: show2; property: visible; to: false; delay: 9800">
+  </a-text>
+
+  <a-text class="chat"
+   opacity="0" line-height=55 width="1" rotation="0 -90 0"
+   color="white" align=right position="1 1.6 0.4"
+   value="if i want cities of live cultures more
+   than pasts, i might have to stay online"
+   animation__show2="startEvents: show2; property: opacity; to: 1; dur: 200; delay: 5000"
+   animation__up2="startEvents: show2; property: position; to: 1 1.8 0.4; dur: 200; delay: 9800"
+   animation__hide2="startEvents: show2; property: visible; to: false; delay: 15800">
+  </a-text>
+
+  <a-text class="chat"
+    opacity="0" line-height=55 width="1" rotation="0 -90 0"
+    color="#CCFFFF" align=left position="1 1.6 -0.4"
+    value="Haha don't be a jerk~ offline funs are
+    the best live cultures for city, at least
+    from my 20s gen perspective"
+    animation__show2="startEvents: show2; property: opacity; to: 1; dur: 200; delay: 10000"
+    animation__up2="startEvents: show2; property: position; to: 1 1.8 -0.4; dur: 200; delay: 15800"
+    animation__hide3="startEvents: show3; property: visible; to: false">
+  </a-text>
+
+  <a-text class="chat"
+    opacity="0" line-height=55 width="1" rotation="0 -90 0"
+    color="#CCFFFF" align=left position="1 1.6 -0.4"
+    value="What's better than instant Medieval
+    fantasies to be played in COVID-free air?"
+    animation__show2="startEvents: show2; property: opacity; to: 1; dur: 200; delay: 16000"
+    animation__up3="startEvents: show3; property: position; to: 1 1.8 -0.4; dur: 200"
+    animation__hide3="startEvents: show3; property: visible; to: false; delay: 5800">
+  </a-text>
+
+  <a-image class="chat" id="rep3"
+   src= "#reply"
+   width="0.2" height="0.1" rotation="0 -90 0" position="1 -10 0"
+   visible="false"
+   animation__on2="startEvents: show2; property: position; to: 0.9 1.3 0; delay: 15500"
+   animation__show2="startEvents: show2; property: visible; to: true; delay: 16000"
+   animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
+   animation__hide3="startEvents: show3; property: visible; to: false"
+   re3>
+  </a-image>
+
+  <a-text class="chat"
+   opacity="0" line-height=55 width="1" rotation="0 -90 0"
+   color="white" align=right position="1 1.6 0.4"
+   value="that might be the best for Tallinn...
+   but id like to see places that sustain
+   their presents before they go online"
+   animation__show3="startEvents: show3; property: opacity; to: 1; dur: 200; delay: 200"
+   animation__up3="startEvents: show3; property: position; to: 1 1.8 0.4; dur: 200; delay: 5800">
+  </a-text>
+
+  <a-text class="chat"
+   opacity="0" line-height=55 width="1" rotation="0 -90 0"
+   color="white" align=right position="1 1.6 0.4"
+   value="im heading to the labor reservations
+   by Parnu Bay, hopefully will find a
+   live Kalamaja as you told about"
+   animation__show3="startEvents: show3; property: opacity; to: 1; dur: 200; delay: 6000">
+  </a-text>
+
+  <a-image id="out" class="chat"
+    visible="false"
+    src= "#go"
+    animation__on3="startEvents: show3; property: position; to: 0 1.3 -2; delay: 6500"
+    animation__show3="startEvents: show3; property: visible; to: true; delay: 7000"
+    animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
+    width="0.5" height="0.5"
+    position="0 10 -2"
+    rotation="-30 0 0"
+    opacity=0.8
+    weblink="url: 13-dialogue.html">
+  </a-image>
+
+</a-scene>
+
+</body>
+</html

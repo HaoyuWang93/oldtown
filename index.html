@@ -1,0 +1,316 @@
+
+<!doctype html>
+<html>
+<head>
+  <title>TLL-2040/12/15</title>
+<script src="aframe/aframe.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="css/custom.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<div style='position: fixed;
+  bottom: 15px;
+  left: 20px;
+  width:100%;
+  text-align: left;
+  z-index: 1;'>
+    <a href="1-tube1.html"><button class="button">SKIP</button></a>
+</div>
+
+<div style='position: fixed;
+top: 15px;
+left: 20px;
+width:100%;
+text-align: left;
+z-index: 1;'>
+  <a href="https://haoyuwang93.github.io/anotherfuture/"><button class="button">HOME</button></a>
+</div>
+
+</head>
+
+<body>
+
+<a-assets>
+  <img id="sky" src="images/cargo.jpg">
+  <img id="talk" src="images/screen/talk.png">
+  <img id="proceed" src="images/screen/proceed.png">
+  <img id="cabin" src="images/direction/cabin.png">
+</a-assets>
+
+  <script>
+  AFRAME.registerComponent("talk0", {
+    init: function() {
+       var pieces = document.getElementsByClassName("chat")
+       this.el.addEventListener("click", e => {
+         for (let piece of pieces) {
+           piece.emit("show0")}
+       }, {once: true})
+     }
+  })
+
+  AFRAME.registerComponent("proc1", {
+    init: function() {
+      var pieces = document.getElementsByClassName("chat")
+       this.el.addEventListener("click", e => {
+         for (let piece of pieces) {
+           piece.emit("show1")}
+       }, {once: true})
+     }
+  })
+
+  AFRAME.registerComponent("proc2", {
+    init: function() {
+      var pieces = document.getElementsByClassName("chat")
+       this.el.addEventListener("click", e => {
+         for (let piece of pieces) {
+           piece.emit("show2")}
+       }, {once: true})
+     }
+  })
+
+  AFRAME.registerComponent("proc3", {
+    init: function() {
+       var pieces = document.getElementsByClassName("chat")
+       this.el.addEventListener("click", e => {
+         for (let piece of pieces) {
+           piece.emit("show3")}
+       }, {once: true})
+     }
+  })
+
+  AFRAME.registerComponent("proc4", {
+    init: function() {
+      var pieces = document.getElementsByClassName("chat")
+       this.el.addEventListener("click", e => {
+         for (let piece of pieces) {
+           piece.emit("show4")}
+       }, {once: true})
+     }
+  })
+
+  AFRAME.registerComponent("proc5", {
+    init: function() {
+      var pieces = document.getElementsByClassName("chat")
+       this.el.addEventListener("click", e => {
+         for (let piece of pieces) {
+           piece.emit("show5")}
+       }, {once: true})
+     }
+  })
+
+
+  AFRAME.registerComponent("weblink", {
+  schema: {
+    url: {
+      default: ""
+    }
+  },
+  init: function() {
+    this.el.addEventListener("click", (e) => {
+      window.location = this.data.url;
+    })
+  }
+})
+</script>
+
+<a-scene cursor="rayOrigin: mouse" vr-mode-ui="arEnabled:false" loading-screen="dotsColor: white; backgroundColor: black">
+  <a-sky id="skyid" src="#sky" rotation="0 -90 0"></a-sky>
+
+  <a-image class="chat" id="talkbutton"
+   src= "#talk"
+   width="0.2" height="0.1" rotation="0 -90 0" position="1 1.5 -0.05"
+   animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
+   animation__hide0="startEvents: show0; property: visible; to: false"
+   animation__off0="startEvents: show0; property: position; to: 1 10 -0.05"
+   talk0>
+  </a-image>
+
+  <a-text class="chat"
+    opacity="0" line-height=55 width="1" rotation="0 -90 0"
+    color="white" align=right position="1 1.75 0.1"
+    value="We are arriving right at sunrise!
+    Thank you for this lift, bro"
+    animation__show0="startEvents: show0; property: opacity; to: 1; dur: 500"
+    animation__hide1="startEvents: show1; property: visible; to: false">
+  </a-text>
+
+  <a-text class="chat"
+    opacity="0" line-height=55 width="1" rotation="0 -90 0"
+    color="#99CCFF" align=left position="1 1.75 0.2"
+    value="I was gonna say thank you,
+    nobody wanna solo crew across Baltic in winter."
+    animation__show0="startEvents: show0; property: opacity; to: 1; dur: 500; delay: 2500"
+    animation__hide1="startEvents: show1; property: visible; to: false">
+  </a-text>
+
+  <a-image class="chat" id="rep1"
+   src= "#proceed"
+   width="0.2" height="0.1" rotation="0 -90 0" position="1 -10 -0.05"
+   visible="false"
+   animation__on0="startEvents: show0; property: position; to: 1 1.5 -0.05; delay: 3000"
+   animation__show0="startEvents: show0; property: visible; to: true; delay: 3500"
+   animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
+   animation__hide1="startEvents: show1; property: visible; to: false"
+   animation__off1="startEvents: show1; property: position; to: 1 10 -0.05"
+   proc1>
+  </a-image>
+
+  <a-text class="chat"
+    opacity="0" line-height=55 width="1" rotation="0 -90 0"
+    color="white" align=right position="1.01 1.75 0.1"
+    value="... so the cabins were designed for how many?"
+    animation__show1="startEvents: show1; property: opacity; to: 1; dur: 500"
+    animation__hide2="startEvents: show2; property: visible; to: false">
+  </a-text>
+
+  <a-text class="chat"
+    opacity="0" line-height=55 width="1" rotation="0 -90 0"
+    color="#99CCFF" align=left position="1.01 1.75 0.2"
+    value="20-30 from my memory; it's a 2015 model before
+    the auto things came in... guess how I caught up
+    with autopilot training tasks before being laid off?"
+    animation__show1="startEvents: show1; property: opacity; to: 1; dur: 500; delay: 2000"
+    animation__hide2="startEvents: show2; property: visible; to: false">
+  </a-text>
+
+  <a-image class="chat" id="rep2"
+   src= "#proceed"
+   width="0.2" height="0.1" rotation="0 -90 0" position="1 -10 -0.05"
+   visible="false"
+   animation__on1="startEvents: show1; property: position; to: 1 1.5 -0.05; delay: 2500"
+   animation__show1="startEvents: show1; property: visible; to: true; delay: 3000"
+   animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
+   animation__hide2="startEvents: show2; property: visible; to: false"
+   animation__off2="startEvents: show2; property: position; to: 1 10 -0.05"
+   proc2>
+  </a-image>
+
+  <a-text class="chat"
+    opacity="0" line-height=55 width="1" rotation="0 -90 0"
+    color="white" align=right position="1.02 1.75 0.1"
+    value="You told me at least 10 times on this ride..."
+    animation__show2="startEvents: show2; property: opacity; to: 1; dur: 500"
+    animation__hide3="startEvents: show3; property: visible; to: false">
+  </a-text>
+
+  <a-text class="chat"
+    opacity="0" line-height=55 width="1" rotation="0 -90 0"
+    color="#99CCFF" align=left position="1.02 1.8 0.2"
+    value="Haha, my bad...
+    so tell me more about your story before we land.
+    I know the 90-day-annual visit requirement and
+    that winter is not a cruise season, but why winter?
+    I mean Tallinn is like a ghost town right now."
+    animation__show2="startEvents: show2; property: opacity; to: 1; dur: 500; delay: 2000"
+    animation__hide3="startEvents: show3; property: visible; to: false">
+  </a-text>
+
+  <a-image class="chat" id="rep3"
+   src= "#proceed"
+   width="0.2" height="0.1" rotation="0 -90 0" position="1 -10 -0.05"
+   visible="false"
+   animation__on2="startEvents: show2; property: position; to: 1 1.5 -0.05; delay: 2500"
+   animation__show2="startEvents: show2; property: visible; to: true; delay: 3000"
+   animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
+   animation__hide3="startEvents: show3; property: visible; to: false"
+   animation__off3="startEvents: show3; property: position; to: 1 10 -0.05"
+   proc3>
+  </a-image>
+
+  <a-text class="chat"
+    opacity="0" line-height=55 width="1" rotation="0 -90 0"
+    color="white" align=right position="1.03 1.75 0.1"
+    value="I was trying to avoid the TAU outbreak back in
+    summer and now have to come before my
+    E-Residency year ends... my friend there said they
+    still have Old Town Christmas events though..."
+    animation__show3="startEvents: show3; property: opacity; to: 1; dur: 500"
+    animation__hide4="startEvents: show4; property: visible; to: false">
+  </a-text>
+
+  <a-text class="chat"
+    opacity="0" line-height=55 width="1" rotation="0 -90 0"
+    color="#99CCFF" align=left position="1.03 1.75 0.2"
+    value="I see... is it true that you can get any drugs
+    at Baltic Quarantine Resort?"
+    animation__show3="startEvents: show3; property: opacity; to: 1; dur: 500; delay: 8000"
+    animation__hide4="startEvents: show4; property: visible; to: false">
+  </a-text>
+
+  <a-image class="chat" id="rep4"
+   src= "#proceed"
+   width="0.2" height="0.1" rotation="0 -90 0" position="1 -10 -0.05"
+   visible="false"
+   animation__on3="startEvents: show3; property: position; to: 1 1.5 -0.05; delay: 8500"
+   animation__show3="startEvents: show3; property: visible; to: true; delay: 9000"
+   animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
+   animation__hide4="startEvents: show4; property: visible; to: false"
+   animation__off4="startEvents: show4; property: position; to: 1 10 -0.05"
+   proc4>
+  </a-image>
+
+  <a-text class="chat"
+    opacity="0" line-height=55 width="1" rotation="0 -90 0"
+    color="white" align=right position="1.04 1.75 0.1"
+    value="No, but any testing tricks you can imagine...
+    anyway, it's probably quieter than here now with
+    more robots than humans. I've got cheaper cell
+    at Kopli Station for my arrival week."
+    animation__show4="startEvents: show4; property: opacity; to: 1; dur: 500"
+    animation__hide5="startEvents: show5; property: visible; to: false">
+  </a-text>
+
+  <a-text class="chat"
+    opacity="0" line-height=55 width="1" rotation="0 -90 0"
+    color="#99CCFF" align=left position="1.04 1.75 0.2"
+    value="Kopli Station?... I don't know how Estonia Health
+    advertised it but I'd avoid for sure. The whole area
+    has been hollowed out after industry closures,
+    even the Russians have left..."
+    animation__show4="startEvents: show4; property: opacity; to: 1; dur: 500; delay: 8000"
+    animation__hide5="startEvents: show5; property: visible; to: false">
+  </a-text>
+
+
+    <a-image class="chat" id="rep5"
+     src= "#proceed"
+     width="0.2" height="0.1" rotation="0 -90 0" position="1 -10 -0.05"
+     visible="false"
+     animation__on4="startEvents: show4; property: position; to: 1 1.5 -0.05; delay: 8500"
+     animation__show4="startEvents: show4; property: visible; to: true; delay: 9000"
+     animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
+     animation__hide5="startEvents: show5; property: visible; to: false"
+     proc5>
+    </a-image>
+
+    <a-text class="chat"
+      opacity="0" line-height=55 width="1" rotation="0 -90 0"
+      color="white" align=right position="1.05 1.75 0.1"
+      value="Really? It's just 1 kilo away from Old Town
+      so I thought it could be lively..."
+      animation__show5="startEvents: show5; property: opacity; to: 1; dur: 500">
+    </a-text>
+
+    <a-text class="chat"
+      opacity="0" line-height=55 width="1" rotation="0 -90 0"
+      color="#99CCFF" align=left position="1.05 1.75 0.2"
+      value="haha but its not part of the Old Town, right?"
+      animation__show5="startEvents: show5; property: opacity; to: 1; dur: 500; delay: 2500">
+    </a-text>
+
+   <a-image id="out" class="chat"
+      visible="false"
+      src= "#cabin"
+      animation__show5="startEvents: show5; property: visible; to: true; delay: 3000"
+      animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
+      width="0.5" height="0.5"
+      position="0 1.85 2.5"
+      rotation="0 180 0"
+      opacity=0.8
+      weblink="url: 1-tube1.html">
+    </a-image>
+
+</a-scene>
+
+</body>
+</html
