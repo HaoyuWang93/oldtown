@@ -39,13 +39,6 @@ z-index: 1;'>
 
 <body>
 
-<a-assets>
-  <img id="sky" src="images/eliise.jpg">
-  <img id="talk" src="images/screen/talk.png">
-  <img id="proceed" src="images/screen/proceed.png">
-  <img id="sleep" src="images/direction/sleep.png">
-</a-assets>
-
 <div id="preload">
   <p id="intro">
       ...never felt so cozy<br>
@@ -67,7 +60,7 @@ function pippo(){
 
   AFRAME.registerComponent("talk0", {
     init: function() {
-       var pieces = document.getElementsByClassName("chat")
+       var pieces = document.querySelectorAll(".chat, .clickable")
        this.el.addEventListener("click", e => {
          for (let piece of pieces) {
            piece.emit("show0")}
@@ -77,7 +70,7 @@ function pippo(){
 
   AFRAME.registerComponent("proc1", {
     init: function() {
-      var pieces = document.getElementsByClassName("chat")
+      var pieces = document.querySelectorAll(".chat, .clickable")
        this.el.addEventListener("click", e => {
          for (let piece of pieces) {
            piece.emit("show1")}
@@ -87,7 +80,7 @@ function pippo(){
 
   AFRAME.registerComponent("proc2", {
     init: function() {
-      var pieces = document.getElementsByClassName("chat")
+      var pieces = document.querySelectorAll(".chat, .clickable")
        this.el.addEventListener("click", e => {
          for (let piece of pieces) {
            piece.emit("show2")}
@@ -97,7 +90,7 @@ function pippo(){
 
   AFRAME.registerComponent("proc3", {
     init: function() {
-       var pieces = document.getElementsByClassName("chat")
+       var pieces = document.querySelectorAll(".chat, .clickable")
        this.el.addEventListener("click", e => {
          for (let piece of pieces) {
            piece.emit("show3")}
@@ -107,7 +100,7 @@ function pippo(){
 
   AFRAME.registerComponent("proc4", {
     init: function() {
-      var pieces = document.getElementsByClassName("chat")
+      var pieces = document.querySelectorAll(".chat, .clickable")
        this.el.addEventListener("click", e => {
          for (let piece of pieces) {
            piece.emit("show4")}
@@ -117,7 +110,7 @@ function pippo(){
 
   AFRAME.registerComponent("proc5", {
     init: function() {
-      var pieces = document.getElementsByClassName("chat")
+      var pieces = document.querySelectorAll(".chat, .clickable")
        this.el.addEventListener("click", e => {
          for (let piece of pieces) {
            piece.emit("show5")}
@@ -140,10 +133,19 @@ function pippo(){
 })
 </script>
 
-<a-scene cursor="rayOrigin: mouse" vr-mode-ui="arEnabled:false" loading-screen="dotsColor: black; backgroundColor: #F1F1F1">
+<a-scene cursor="rayOrigin: mouse" raycaster="far: 20; interval: 1000; objects: .clickable"
+vr-mode-ui="enabled:false" loading-screen="dotsColor: black; backgroundColor: #F1F1F1">
+
+  <a-assets>
+    <img id="sky" src="images/eliise.jpg">
+    <img id="talk" src="images/screen/talk.png">
+    <img id="proceed" src="images/screen/proceed.png">
+    <img id="sleep" src="images/direction/sleep.png">
+  </a-assets>
+
   <a-sky id="skyid" src="#sky" rotation="0 -90 0"></a-sky>
 
-  <a-image class="chat" id="talkbutton"
+  <a-image class="clickable" id="talkbutton"
    src= "#talk"
    width="0.2" height="0.1" rotation="0 -90 0" position="1 1.45 -0.15"
    animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
@@ -170,7 +172,7 @@ function pippo(){
     animation__hide1="startEvents: show1; property: visible; to: false">
   </a-text>
 
-  <a-image class="chat" id="rep1"
+  <a-image class="clickable" id="rep1"
    src= "#proceed"
    width="0.2" height="0.1" rotation="0 -90 0" position="1 -10 -0.15"
    visible="false"
@@ -201,7 +203,7 @@ function pippo(){
     animation__hide2="startEvents: show2; property: visible; to: false">
   </a-text>
 
-  <a-image class="chat" id="rep2"
+  <a-image class="clickable" id="rep2"
    src= "#proceed"
    width="0.2" height="0.1" rotation="0 -90 0" position="1 -10 -0.15"
    visible="false"
@@ -254,7 +256,7 @@ function pippo(){
     animation__hide3="startEvents: show3; property: visible; to: false">
   </a-text>
 
-  <a-image class="chat" id="rep3"
+  <a-image class="clickable" id="rep3"
    src= "#proceed"
    width="0.2" height="0.1" rotation="0 -90 0" position="1 -10 -0.15"
    visible="false"
@@ -306,7 +308,7 @@ function pippo(){
     animation__hide4="startEvents: show4; property: visible; to: false">
   </a-text>
 
-  <a-image class="chat" id="rep4"
+  <a-image class="clickable" id="rep4"
    src= "#proceed"
    width="0.2" height="0.1" rotation="0 -90 0" position="1 -10 -0.15"
    visible="false"
@@ -364,7 +366,7 @@ function pippo(){
     animation__show4="startEvents: show4; property: opacity; to: 1; dur: 500; delay: 16000"
     animation__hide5="startEvents: show5; property: visible; to: false">
   </a-text>
-  <a-image class="chat" id="rep5"
+  <a-image class="clickable" id="rep5"
    src= "#proceed"
    width="0.2" height="0.1" rotation="0 -90 0" position="1 -10 -0.15"
    visible="false"
@@ -431,7 +433,7 @@ function pippo(){
     animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true">
   </a-text>
 
-   <a-image id="out" class="chat"
+   <a-image id="out" class="clickable"
       visible="false"
       src= "#sleep"
       animation__show5="startEvents: show5; property: visible; to: true; delay: 23000"

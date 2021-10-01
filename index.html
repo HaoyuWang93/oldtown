@@ -30,17 +30,10 @@ z-index: 1;'>
 
 <body>
 
-<a-assets>
-  <img id="sky" src="images/cargo.jpg">
-  <img id="talk" src="images/screen/talk.png">
-  <img id="proceed" src="images/screen/proceed.png">
-  <img id="cabin" src="images/direction/cabin.png">
-</a-assets>
-
   <script>
   AFRAME.registerComponent("talk0", {
     init: function() {
-       var pieces = document.getElementsByClassName("chat")
+       var pieces = document.querySelectorAll(".chat, .clickable")
        this.el.addEventListener("click", e => {
          for (let piece of pieces) {
            piece.emit("show0")}
@@ -50,7 +43,7 @@ z-index: 1;'>
 
   AFRAME.registerComponent("proc1", {
     init: function() {
-      var pieces = document.getElementsByClassName("chat")
+      var pieces = document.querySelectorAll(".chat, .clickable")
        this.el.addEventListener("click", e => {
          for (let piece of pieces) {
            piece.emit("show1")}
@@ -60,7 +53,7 @@ z-index: 1;'>
 
   AFRAME.registerComponent("proc2", {
     init: function() {
-      var pieces = document.getElementsByClassName("chat")
+      var pieces = document.querySelectorAll(".chat, .clickable")
        this.el.addEventListener("click", e => {
          for (let piece of pieces) {
            piece.emit("show2")}
@@ -70,7 +63,7 @@ z-index: 1;'>
 
   AFRAME.registerComponent("proc3", {
     init: function() {
-       var pieces = document.getElementsByClassName("chat")
+       var pieces = document.querySelectorAll(".chat, .clickable")
        this.el.addEventListener("click", e => {
          for (let piece of pieces) {
            piece.emit("show3")}
@@ -80,7 +73,7 @@ z-index: 1;'>
 
   AFRAME.registerComponent("proc4", {
     init: function() {
-      var pieces = document.getElementsByClassName("chat")
+      var pieces = document.querySelectorAll(".chat, .clickable")
        this.el.addEventListener("click", e => {
          for (let piece of pieces) {
            piece.emit("show4")}
@@ -90,7 +83,7 @@ z-index: 1;'>
 
   AFRAME.registerComponent("proc5", {
     init: function() {
-      var pieces = document.getElementsByClassName("chat")
+      var pieces = document.querySelectorAll(".chat, .clickable")
        this.el.addEventListener("click", e => {
          for (let piece of pieces) {
            piece.emit("show5")}
@@ -113,10 +106,19 @@ z-index: 1;'>
 })
 </script>
 
-<a-scene cursor="rayOrigin: mouse" vr-mode-ui="arEnabled:false" loading-screen="dotsColor: white; backgroundColor: black">
+<a-scene cursor="rayOrigin: mouse" raycaster="far: 20; interval: 1000; objects: .clickable"
+vr-mode-ui="enabled:false" loading-screen="dotsColor: black; backgroundColor: #F1F1F1">
+
+  <a-assets>
+    <img id="sky" src="images/cargo.jpg" alt="background">
+    <img id="talk" src="images/screen/talk.png" alt="talk button">
+    <img id="proceed" src="images/screen/proceed.png" alt="proceed button">
+    <img id="cabin" src="images/direction/cabin.png" alt="next page">
+  </a-assets>
+
   <a-sky id="skyid" src="#sky" rotation="0 -90 0"></a-sky>
 
-  <a-image class="chat" id="talkbutton"
+  <a-image class="clickable" id="talkbutton"
    src= "#talk"
    width="0.2" height="0.1" rotation="0 -90 0" position="1 1.5 -0.05"
    animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
@@ -144,9 +146,9 @@ z-index: 1;'>
     animation__hide1="startEvents: show1; property: visible; to: false">
   </a-text>
 
-  <a-image class="chat" id="rep1"
+  <a-image class="clickable" id="rep1"
    src= "#proceed"
-   width="0.2" height="0.1" rotation="0 -90 0" position="1 -10 -0.05"
+   width="0.2" height="0.1" rotation="0 -90 0" position="1 -10 10"
    visible="false"
    animation__on0="startEvents: show0; property: position; to: 1 1.5 -0.05; delay: 3000"
    animation__show0="startEvents: show0; property: visible; to: true; delay: 3500"
@@ -185,12 +187,12 @@ z-index: 1;'>
     animation__hide2="startEvents: show2; property: visible; to: false">
   </a-text>
 
-  <a-image class="chat" id="rep2"
+  <a-image class="clickable" id="rep2"
    src= "#proceed"
-   width="0.2" height="0.1" rotation="0 -90 0" position="1 -10 -0.05"
+   width="0.2" height="0.1" rotation="0 -90 0" position="1 -10 10"
    visible="false"
-   animation__on1="startEvents: show1; property: position; to: 1 1.5 -0.05; delay: 2500"
-   animation__show1="startEvents: show1; property: visible; to: true; delay: 3000"
+   animation__on1="startEvents: show1; property: position; to: 1 1.5 -0.05; delay: 5500"
+   animation__show1="startEvents: show1; property: visible; to: true; delay: 6000"
    animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
    animation__hide2="startEvents: show2; property: visible; to: false"
    animation__off2="startEvents: show2; property: position; to: 1 10 -0.05"
@@ -220,9 +222,9 @@ z-index: 1;'>
     animation__hide3="startEvents: show3; property: visible; to: false">
   </a-text>
 
-  <a-image class="chat" id="rep3"
+  <a-image class="clickable" id="rep3"
    src= "#proceed"
-   width="0.2" height="0.1" rotation="0 -90 0" position="1 -10 -0.05"
+   width="0.2" height="0.1" rotation="0 -90 0" position="1 -10 10"
    visible="false"
    animation__on2="startEvents: show2; property: position; to: 1 1.5 -0.05; delay: 2500"
    animation__show2="startEvents: show2; property: visible; to: true; delay: 3000"
@@ -251,16 +253,16 @@ z-index: 1;'>
     value="I see... is it true that
     you can get any drugs at
     Baltic Quarantine Resort?"
-    animation__show3="startEvents: show3; property: opacity; to: 1; dur: 500; delay: 8000"
+    animation__show3="startEvents: show3; property: opacity; to: 1; dur: 500; delay: 6000"
     animation__hide4="startEvents: show4; property: visible; to: false">
   </a-text>
 
-  <a-image class="chat" id="rep4"
+  <a-image class="clickable" id="rep4"
    src= "#proceed"
-   width="0.2" height="0.1" rotation="0 -90 0" position="1 -10 -0.05"
+   width="0.2" height="0.1" rotation="0 -90 0" position="1 -10 10"
    visible="false"
-   animation__on3="startEvents: show3; property: position; to: 1 1.5 -0.05; delay: 8500"
-   animation__show3="startEvents: show3; property: visible; to: true; delay: 9000"
+   animation__on3="startEvents: show3; property: position; to: 1 1.5 -0.05; delay: 6500"
+   animation__show3="startEvents: show3; property: visible; to: true; delay: 7000"
    animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
    animation__hide4="startEvents: show4; property: visible; to: false"
    animation__off4="startEvents: show4; property: position; to: 1 10 -0.05"
@@ -289,17 +291,17 @@ z-index: 1;'>
     Its nothing but a dump field
     after industries closed,
     even the Russians have left..."
-    animation__show4="startEvents: show4; property: opacity; to: 1; dur: 500; delay: 8000"
+    animation__show4="startEvents: show4; property: opacity; to: 1; dur: 500; delay: 6000"
     animation__hide5="startEvents: show5; property: visible; to: false">
   </a-text>
 
 
-    <a-image class="chat" id="rep5"
+    <a-image class="clickable" id="rep5"
      src= "#proceed"
-     width="0.2" height="0.1" rotation="0 -90 0" position="1 -10 -0.05"
+     width="0.2" height="0.1" rotation="0 -90 0" position="1 -10 10"
      visible="false"
-     animation__on4="startEvents: show4; property: position; to: 1 1.5 -0.05; delay: 8500"
-     animation__show4="startEvents: show4; property: visible; to: true; delay: 9000"
+     animation__on4="startEvents: show4; property: position; to: 1 1.5 -0.05; delay: 6500"
+     animation__show4="startEvents: show4; property: visible; to: true; delay: 7000"
      animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
      animation__hide5="startEvents: show5; property: visible; to: false"
      proc5>
@@ -323,7 +325,7 @@ z-index: 1;'>
       animation__show5="startEvents: show5; property: opacity; to: 1; dur: 500; delay: 2500">
     </a-text>
 
-   <a-image id="out" class="chat"
+   <a-image id="out" class="clickable"
       visible="false"
       src= "#cabin"
       animation__show5="startEvents: show5; property: visible; to: true; delay: 3000"

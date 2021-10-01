@@ -50,7 +50,7 @@ z-index: 1;'>
   <script>
  AFRAME.registerComponent("re1", {
     init: function() {
-       var pieces = document.getElementsByClassName("chat")
+       var pieces = document.querySelectorAll(".chat, .clickable")
        this.el.addEventListener("click", e => {
          for (let piece of pieces) {
            piece.emit("show1")}
@@ -60,7 +60,7 @@ z-index: 1;'>
 
   AFRAME.registerComponent("re2", {
     init: function() {
-       var pieces = document.getElementsByClassName("chat")
+       var pieces = document.querySelectorAll(".chat, .clickable")
        this.el.addEventListener("click", e => {
          for (let piece of pieces) {
            piece.emit("show2")}
@@ -70,7 +70,7 @@ z-index: 1;'>
 
   AFRAME.registerComponent("re3", {
     init: function() {
-       var pieces = document.getElementsByClassName("chat")
+       var pieces = document.querySelectorAll(".chat, .clickable")
        this.el.addEventListener("click", e => {
          for (let piece of pieces) {
            piece.emit("show3")}
@@ -92,7 +92,17 @@ z-index: 1;'>
 })
 </script>
 
-<a-scene cursor="rayOrigin: mouse" vr-mode-ui="arEnabled:false" loading-screen="dotsColor: black; backgroundColor: #F1F1F1">
+<a-scene cursor="rayOrigin: mouse" raycaster="far: 20; interval: 1000; objects: .clickable"
+vr-mode-ui="enabled:false" loading-screen="dotsColor: black; backgroundColor: #F1F1F1">
+
+  <a-assets>
+    <img id="sky" src="images/kopli.jpg" alt="background">
+    <img id="phone" src="images/screen/phone19.png" alt="phone screen">
+    <img id="reply" src="images/screen/re.png" alt="reply button">
+    <img id="hello" src="images/screen/hello.png" alt="say hello">
+    <img id="check" src="images/direction/check.png" alt="next page">
+  </a-assets>
+
   <a-sky id="skyid" src="#sky" rotation="0 -90 0"></a-sky>
 
   <a-image src="#phone"
@@ -107,7 +117,7 @@ z-index: 1;'>
     animation__hide1="startEvents: show1; property: visible; to: false; delay: 4800">
   </a-text>
 
-  <a-image class="chat" id="rep1"
+  <a-image class="clickable" id="rep1"
    src= "#reply"
    width="0.2" height="0.1" rotation="0 -45 0" position="0.8 1.3 -0.8"
    animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
@@ -136,7 +146,7 @@ z-index: 1;'>
    animation__hide2="startEvents: show2; property: visible; to: false; delay: 8800">
   </a-text>
 
-  <a-image id="greet" class="chat"
+  <a-image id="greet" class="clickable"
     visible="false"
     src= "#hello" width="0.5" height="0.25"
     position="-2.5 1.7 -2.5"
@@ -175,7 +185,7 @@ z-index: 1;'>
     animation__hide3="startEvents: show3; property: visible; to: false; delay: 4800">
   </a-text>
 
-  <a-image class="chat" id="rep3"
+  <a-image class="clickable" id="rep3"
    src= "#reply" visible="false"
    width="0.2" height="0.1" rotation="0 -45 0" position="0.8 -10 -0.8"
    animation__up2="startEvents: show2; property: position; to: 0.8 1.3 -0.8; delay: 9500"
@@ -222,7 +232,7 @@ z-index: 1;'>
     animation__show3="startEvents: show3; property: opacity; to: 1; delay: 15000">
   </a-text>
 
-  <a-image id="out" class="chat"
+  <a-image id="out" class="clickable"
     visible="false"
     src= "#check"
     animation__show3="startEvents: show3; property: visible; to: true; delay: 16000"

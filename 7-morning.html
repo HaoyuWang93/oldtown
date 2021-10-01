@@ -30,11 +30,6 @@ z-index: 1;'>
 
 <body>
 
-<a-assets>
-  <img id="sky" src="images/morning.jpg">
-  <img id="back" src="images/direction/back.png">
-</a-assets>
-
   <div id="preload">
     <p id="intro">
         12/20/2040<br>
@@ -69,7 +64,14 @@ z-index: 1;'>
 })
 </script>
 
-<a-scene cursor="rayOrigin: mouse" vr-mode-ui="arEnabled:false" loading-screen="dotsColor: black; backgroundColor: #F1F1F1">
+<a-scene cursor="rayOrigin: mouse" raycaster="far: 20; interval: 1000; objects: .clickable"
+vr-mode-ui="enabled:false" loading-screen="dotsColor: black; backgroundColor: #F1F1F1">
+
+  <a-assets>
+    <img id="sky" src="images/morning.jpg">
+    <img id="back" src="images/direction/back.png">
+  </a-assets>
+
   <a-sky id="skyid" src="#sky" rotation="0 -90 0"></a-sky>
 
   <a-text class="chat"
@@ -82,7 +84,7 @@ z-index: 1;'>
    animation__flash="property: opacity; from: 1; to: 0.25; dur: 1000; dir: alternate; loop: true">
   </a-text>
 
-  <a-image id="out" class="chat"
+  <a-image id="out" class="clickable"
     src= "#back"
     animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
     width="1" height="1"

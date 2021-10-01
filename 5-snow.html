@@ -31,13 +31,6 @@ z-index: 1;'>
 
 <body>
 
-<a-assets>
-  <img id="sky" src="images/snow.jpg">
-  <img id="phone" src="images/screen/phone194.png">
-  <img id="battery" src="images/screen/battery.png">
-  <img id="gogogo" src="images/direction/gogogo.png">
-</a-assets>
-
 <div id="preload">
   <p id="intro">
       Dammit!<br>
@@ -69,7 +62,8 @@ function pippo(){
 })
 </script>
 
-<a-scene cursor="rayOrigin: mouse" vr-mode-ui="arEnabled:false" loading-screen="dotsColor: black; backgroundColor: #F1F1F1">
+<a-scene cursor="rayOrigin: mouse" raycaster="far: 20; interval: 1000; objects: .clickable"
+vr-mode-ui="enabled:false" loading-screen="dotsColor: black; backgroundColor: #F1F1F1">
   <a-entity position="0 2 -15" particle-system=
   "preset: snow; particleCount: 60000; maxAge: 1; color: #B3B3B3;
   rotationAxis: z; rotationAngle: 4; size: 8; rotationAngleSpread: 1;
@@ -77,13 +71,20 @@ function pippo(){
   positionSpread: 800 800 800">
   </a-entity>
 
+  <a-assets>
+    <img id="sky" src="images/snow.jpg">
+    <img id="phone" src="images/screen/phone194.png">
+    <img id="battery" src="images/screen/battery.png">
+    <img id="gogogo" src="images/direction/gogogo.png">
+  </a-assets>
+
   <a-sky id="skyid" src="#sky" rotation="0 180 0"></a-sky>
 
   <a-image src="#phone"
   width="0.4" height="0.4"
   rotation="-45 0 0" position="0 1.2 -0.6"></a-image>
 
-  <a-image id="rep1"
+  <a-image id="battery"
    src= "#battery"
    width="0.3" height="0.3" rotation="-45 0 0" position="0 1.2 -0.55"
    animation__flash="property: opacity; from: 1; to: 0; dur: 1000; dir: alternate; loop: true">
@@ -111,7 +112,7 @@ function pippo(){
       animation__flash="property: opacity; from: 1; to: 0; dur: 500; dir: alternate; loop: true">
   </a-text>
 
-  <a-image id="out" class="chat"
+  <a-image id="out" class="clickable"
     src= "#gogogo"
     animation__flash="property: opacity; from: 0.8; to: 0; dur: 500; dir: alternate; loop: true"
     width="1.5" height="1.5"

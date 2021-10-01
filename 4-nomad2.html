@@ -40,19 +40,10 @@ z-index: 1;'>
 
 <body>
 
-<a-assets>
-  <img id="sky" src="images/nomad2.jpg">
-  <img id="phone" src="images/screen/phone193.png">
-  <img id="axon" src="images/screen/axon.png">
-  <img id="map" src="images/screen/map.png">
-  <img id="reply" src="images/screen/re.png">
-  <img id="check2" src="images/direction/check2.png">
-</a-assets>
-
   <script>
  AFRAME.registerComponent("re1", {
     init: function() {
-       var pieces = document.getElementsByClassName("chat")
+       var pieces = document.querySelectorAll(".chat, .clickable")
        this.el.addEventListener("click", e => {
          for (let piece of pieces) {
            piece.emit("show1")}
@@ -62,7 +53,7 @@ z-index: 1;'>
 
   AFRAME.registerComponent("re2", {
     init: function() {
-       var pieces = document.getElementsByClassName("chat")
+       var pieces = document.querySelectorAll(".chat, .clickable")
        this.el.addEventListener("click", e => {
          for (let piece of pieces) {
            piece.emit("show2")}
@@ -84,10 +75,20 @@ z-index: 1;'>
 })
 </script>
 
-<a-scene cursor="rayOrigin: mouse" vr-mode-ui="arEnabled:false" loading-screen="dotsColor: black; backgroundColor: #F1F1F1">
+<a-scene cursor="rayOrigin: mouse" raycaster="far: 20; interval: 1000; objects: .clickable"
+vr-mode-ui="enabled:false" loading-screen="dotsColor: black; backgroundColor: #F1F1F1">
   <a-entity position="0 3 -15" particle-system=
   "preset: snow; particleCount: 1000; maxAge: 2">
   </a-entity>
+
+  <a-assets>
+    <img id="sky" src="images/nomad2.jpg">
+    <img id="phone" src="images/screen/phone193.png">
+    <img id="axon" src="images/screen/axon.png">
+    <img id="map" src="images/screen/map.png">
+    <img id="reply" src="images/screen/re.png">
+    <img id="check2" src="images/direction/check2.png">
+  </a-assets>
 
   <a-sky id="skyid" src="#sky" rotation="0 -90 0"></a-sky>
 
@@ -108,7 +109,7 @@ z-index: 1;'>
    animation__hide1="startEvents: show1; property: visible; to: false">
   </a-image>
 
-  <a-image class="chat" id="rep1"
+  <a-image class="clickable" id="rep1"
    src= "#reply"
    width="0.2" height="0.1" rotation="0 90 0" position="-1 1.23 0"
    animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
@@ -155,7 +156,7 @@ z-index: 1;'>
     animation__hide2="startEvents: show2; property: visible; to: false; delay: 5800">
   </a-text>
 
-  <a-image class="chat" id="rep2"
+  <a-image class="clickable" id="rep2"
    src= "#reply"
    width="0.2" height="0.1" rotation="0 90 0" position="-1 -10 0"
    animation__up1="startEvents: show1; property: position; to: -1 1.23 0; dur: 200; delay: 12500"
@@ -196,7 +197,7 @@ z-index: 1;'>
     animation__show2="startEvents: show2; property: opacity; to: 1; dur: 200; delay: 10000">
   </a-text>
 
-  <a-image id="out" class="chat"
+  <a-image id="out" class="clickable"
     visible="false"
     src= "#check2"
     animation__up2="startEvents: show2; property: position; to: 0 0 -6; delay: 10500"
