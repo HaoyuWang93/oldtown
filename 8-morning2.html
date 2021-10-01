@@ -51,15 +51,17 @@ z-index: 1;'>
 })
 </script>
 
-<a-scene cursor="rayOrigin: mouse" vr-mode-ui="arEnabled:false" loading-screen="dotsColor: white; backgroundColor: black">
+<a-scene cursor="rayOrigin: mouse" vr-mode-ui="arEnabled:false" loading-screen="dotsColor: black; backgroundColor: #F1F1F1">
   <a-sky id="skyid" src="#sky" rotation="0 -90 0"></a-sky>
 
   <a-text class="chat"
    line-height=55 width="1" rotation="0 0 0"
    color="white" align=center position="0.05 2 -1"
-   value="Why so close?
+   value="SHIT!
+   TOO CLOSE!
    Am I being
-   paranoid?">
+   paranoid?"
+   animation__flash="property: opacity; from: 1; to: 0.25; dur: 1000; dir: alternate; loop: true">
   </a-text>
 
   <a-image id="out" class="chat"

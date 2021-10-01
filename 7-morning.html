@@ -41,14 +41,14 @@ z-index: 1;'>
         9:14 GMT+2<br>
         The snow has finally stopped;<br>
         Eliise is still in her headset;<br>
-        I'd better go back before the drones<br>
-        come for morning testing session...
+        I'd better go back before the<br>
+        COVID testing drones arrive...
     </p>
   </div>
 
   <script>
   window.addEventListener("load", function(){
-      setInterval(pippo, 5000);
+      setInterval(pippo, 6000);
   });
   function pippo(){
       var load_screen = document.getElementById("preload");
@@ -69,7 +69,7 @@ z-index: 1;'>
 })
 </script>
 
-<a-scene cursor="rayOrigin: mouse" vr-mode-ui="arEnabled:false" loading-screen="dotsColor: white; backgroundColor: black">
+<a-scene cursor="rayOrigin: mouse" vr-mode-ui="arEnabled:false" loading-screen="dotsColor: black; backgroundColor: #F1F1F1">
   <a-sky id="skyid" src="#sky" rotation="0 -90 0"></a-sky>
 
   <a-text class="chat"
@@ -79,6 +79,7 @@ z-index: 1;'>
    but as I digest last night's talk,
    these towers seem to grow
    taller and come closer..."
+   animation__flash="property: opacity; from: 1; to: 0.25; dur: 1000; dir: alternate; loop: true">
   </a-text>
 
   <a-image id="out" class="chat"

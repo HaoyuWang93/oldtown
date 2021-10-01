@@ -3,7 +3,7 @@ custom.css
 
 /* Global */
 body {
-    background: black;
+    background: #F1F1F1;
 }
 
 #preload {
@@ -14,7 +14,7 @@ body {
     width: 100%;
     height: 100%;
     overflow: visible;
-    background: black;
+    background: #F1F1F1;
 }
 
 #wrapper-dialogues {
@@ -57,7 +57,7 @@ position: relative;
 top:1vh;
 line-height: 1.5;
 font-size: 1.2em;
-color: #FFB2B2;
+color: #800000;
 font-style: italic;
 text-align: left;
 margin-right: 25%;
@@ -69,14 +69,14 @@ position: relative;
 top:1vh;
 line-height: 1.5;
 font-size: 1.2em;
-color: white;
+color: black;
 text-align: right;
 margin-left:25%;
 }
 
 /*button style */
 .button {
-  background-color: #F5F5F5;
+  background-color: #F1F1F1;
   border-style: double;
   border-radius: 8px;
   border-color: black;
@@ -91,11 +91,10 @@ margin-left:25%;
 }
 
 #reply {
-  background-color: black;
   border-style: solid;
   border-radius: 8px;
-  border-color: white;
-  color: white;
+  border-color: black;
+  color: black;
   padding: 8px 8px;
   text-align: center;
   text-decoration: none;
@@ -112,11 +111,10 @@ margin-left:25%;
 }
 
 #login {
-  background-color: black;
   border-style: solid;
   border-radius: 8px;
-  border-color: white;
-  color: white;
+  border-color: black;
+  color: black;
   padding: 8px 8px;
   text-align: center;
   text-decoration: none;
@@ -134,11 +132,10 @@ margin-left:25%;
 }
 
 #proceed {
-  background-color: black;
   border-style: solid;
   border-radius: 8px;
-  border-color: white;
-  color: white;
+  border-color: black;
+  color: black;
   padding: 8px 8px;
   text-align: center;
   text-decoration: none;
@@ -163,7 +160,7 @@ margin-left:25%;
   transform: translate(-50%, -50%);
   line-height: 2;
   font-size: 1.5em;
-  color: white;
+  color: black;
   text-align: center;
   padding:10px;
 }
@@ -176,7 +173,7 @@ margin-left:25%;
   transform: translate(-50%, -50%);
   line-height: 2;
   font-size: 1.5em;
-  color: white;
+  color: black;
   font-style: italic;
   text-align: center;
   padding:10px;
@@ -184,13 +181,13 @@ margin-left:25%;
 
 #video-sub {
   position: fixed;
-  top:80%;
+  top:85%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
   line-height: 1.5;
   font-size: 1.5em;
-  color: white;
+  color: black;
   font-style: italic;
   text-align: center;
   padding:10px;
@@ -218,10 +215,14 @@ margin-left:25%;
 }
 
 @media screen and (max-width: 768px) {
-  #monograph {
+  #intro {
+    font-size: 1.2em;
+  }
+  #monologue {
     font-size: 1.2em;
   }
   #video-sub {
+    top: 80%;
     font-size: 1.2em;
   }
   #chat-fr {
@@ -240,9 +241,9 @@ margin-left:25%;
 
   @media screen and (max-width: 350px) {
     #intro {
-      font-size: 1.2em;
+      font-size: 1em;
     }
-    #monograph {
+    #monologue {
       font-size: 1em;
     }
     #video-sub {
