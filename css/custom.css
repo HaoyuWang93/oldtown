@@ -14,10 +14,6 @@ body {
   user-select: all;
 }
 
-.a-enter-ar-button {
-  visibility: hidden;
-}
-
 div.a-enter-ar {
   visibility: hidden;
 }
