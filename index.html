@@ -107,16 +107,7 @@ z-index: 1;'>
 })
 </script>
 
-<a-scene loading-screen="dotsColor: black; backgroundColor: #F1F1F1">
-
-  <a-camera>
-      <a-cursor id="cursor"
-      raycaster="objects: .clickable" material="color: cyan; shader: flat"
-      animation__colorin="property: components.material.material.color; startEvents: mouseenter; dur: 100; type: color; to: red"
-      animation__colorout="property: components.material.material.color; startEvents: mouseleave; dur: 100; type: color; to: cyan"
-      animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 200; from: 0.1 0.1 0.1; to: 1 1 1">
-    </a-cursor>
-    </a-camera>
+<a-scene raycaster="objects: .clickable" cursor="rayOrigin: mouse; fuse:false" loading-screen="dotsColor: black; backgroundColor: #F1F1F1">
 
   <a-assets>
     <img id="sky" src="images/cargo.jpg" alt="background">
