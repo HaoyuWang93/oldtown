@@ -2,6 +2,7 @@
 <!doctype html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <title>TLL-2040/12/20</title>
 <script src="aframe/aframe.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -94,19 +95,18 @@ z-index: 1;'>
   }
 })
 </script>
-
-<a-scene cursor="rayOrigin: mouse" raycaster="far: 20; interval: 1000; objects: .clickable"
-vr-mode-ui="enabled:false" loading-screen="dotsColor: black; backgroundColor: #F1F1F1">
+<a-scene raycaster="objects: .clickable" cursor="rayOrigin: mouse; fuse:false"
+loading-screen="dotsColor: black; backgroundColor: #F1F1F1">
 
   <a-assets>
-    <img id="sky" src="images/tube2.jpg">
-    <img id="phone" src="images/screen/phone20.png">
-    <img id="message" src="images/screen/message.png">
-    <img id="reply" src="images/screen/re.png">
-    <img id="work" src="images/direction/work.png">
+    <img id="sky" src="images/tube2.jpg" alt="background">
+    <img id="phone" src="images/screen/phone20.png" alt="phone screen">
+    <img id="message" src="images/screen/message.png" alt="message button">
+    <img id="reply" src="images/screen/re.png" alt="reply button">
+    <img id="work" src="images/direction/work.png" alt="next page">
   </a-assets>
 
-  <a-sky id="skyid" src="#sky" rotation="-45 -90 0"></a-sky>
+  <a-sky src="#sky" rotation="-45 -90 0"></a-sky>
 
   <a-image src="#phone"
   width="1" height="1"
@@ -114,10 +114,9 @@ vr-mode-ui="enabled:false" loading-screen="dotsColor: black; backgroundColor: #F
 
   <a-image class="clickable" id="message"
    src= "#message"
-   width="0.25" height="0.25" rotation="0 -90 0" position="0.9 1.35 0"
+   width="0.25" height="0.25" rotation="0 -90 0" position="0.9 1.6 0"
    animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
-   animation__hide0="startEvents: show0; property: visible; to: false"
-   animation__up0="startEvents: show0; property: position; to: 0.9 10 0"
+   animation__off0="startEvents: show0; property: scale; to: 0 0 0; dur: 100"
    talk0>
   </a-image>
 
@@ -142,13 +141,10 @@ vr-mode-ui="enabled:false" loading-screen="dotsColor: black; backgroundColor: #F
 
   <a-image class="clickable" id="rep1"
    src= "#reply"
-   width="0.2" height="0.1" rotation="0 -90 0" position="0.9 -10 0"
-   visible="false"
-   animation__on0="startEvents: show0; property: position; to: 0.9 1.3 0; delay: 2500"
-   animation__show0="startEvents: show0; property: visible; to: true; delay: 3000"
+   width="0.2" height="0.1" rotation="0 -90 0" position="0.9 1.4 0" scale="0 0 0"
+   animation__on0="startEvents: show0; property: scale; to: 1 1 1; delay: 3000; dur: 100"
    animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
-   animation__hide1="startEvents: show1; property: visible; to: false"
-   animation__up1="startEvents: show1; property: position; to: 0.9 10 0"
+   animation__off1="startEvents: show1; property: scale; to: 0 0 0; dur: 100"
    re1>
   </a-image>
 
@@ -156,19 +152,20 @@ vr-mode-ui="enabled:false" loading-screen="dotsColor: black; backgroundColor: #F
    opacity="0" line-height=55 width="1" rotation="0 -90 0"
    color="white" align=right position="1 1.6 0.4"
    value="thanks man, i was saved by a local there,
-   now lying in tube for post-testing emo"
+   now lying in tube for post-test ponder"
    animation__show1="startEvents: show1; property: opacity; to: 1; dur: 200; delay: 200"
    animation__up1="startEvents: show1; property: position; to: 1 1.8 0.4; dur: 200; delay: 5300"
-   animation__hide1="startEvents: show1; property: visible; to: false; delay: 9800">
+   animation__hide1="startEvents: show1; property: visible; to: false; delay: 10800">
   </a-text>
 
   <a-text class="chat"
     opacity="0" line-height=55 width="1" rotation="0 -90 0"
     color="#AAFF80" align=left position="1 1.6 -0.4"
-    value="so there are actually ppl left? those
-    summer returnees said nobody"
+    value="so they do have ppl left? i met some
+    kalamaja returnees last night
+    and they said nobody left"
     animation__show1="startEvents: show1; property: opacity; to: 1; dur: 200; delay: 5500"
-    animation__up1="startEvents: show1; property: position; to: 1 1.8 -0.4; dur: 200; delay: 9800"
+    animation__up1="startEvents: show1; property: position; to: 1 1.8 -0.4; dur: 200; delay: 10800"
     animation__hide1="startEvents: show1; property: visible; to: false; delay: 15800">
   </a-text>
 
@@ -176,9 +173,9 @@ vr-mode-ui="enabled:false" loading-screen="dotsColor: black; backgroundColor: #F
     opacity="0" line-height=55 width="1" rotation="0 -90 0"
     color="#AAFF80" align=left position="1 1.6 -0.4"
     value="anyway, do u know liviko.ee? they just
-    opened an experience lab here, u can
+    opened an experience lab here, we can
     have hands on making liqueur!"
-    animation__show1="startEvents: show1; property: opacity; to: 1; dur: 200; delay: 10000"
+    animation__show1="startEvents: show1; property: opacity; to: 1; dur: 200; delay: 11000"
     animation__up1="startEvents: show1; property: position; to: 1 1.8 -0.4; dur: 200; delay: 15800"
     animation__hide2="startEvents: show2; property: visible; to: false">
   </a-text>
@@ -195,13 +192,10 @@ vr-mode-ui="enabled:false" loading-screen="dotsColor: black; backgroundColor: #F
 
   <a-image class="clickable" id="rep2"
    src= "#reply"
-   width="0.2" height="0.1" rotation="0 -90 0" position="0.9 -10 0"
-   visible="false"
-   animation__on1="startEvents: show1; property: position; to: 0.9 1.3 0; delay: 16500"
-   animation__show1="startEvents: show1; property: visible; to: true; delay: 17000"
+   width="0.2" height="0.1" rotation="0 -90 0" position="0.9 1.4 0" scale="0 0 0"
+   animation__on1="startEvents: show1; property: scale; to: 1 1 1; delay: 17000; dur: 100"
    animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
-   animation__hide2="startEvents: show2; property: visible; to: false"
-   animation__up2="startEvents: show2; property: position; to: 0.9 10 0"
+   animation__off2="startEvents: show2; property: scale; to: 0 0 0; dur: 100"
    re2>
   </a-image>
 
@@ -209,10 +203,10 @@ vr-mode-ui="enabled:false" loading-screen="dotsColor: black; backgroundColor: #F
    opacity="0" line-height=55 width="1" rotation="0 -90 0"
    color="white" align=right position="1 1.6 0.4"
    value="im not sure...it might sound weird but
-   i think ive got some oldtown ptsd..."
+   i think ive got some oldtown phobia..."
    animation__show2="startEvents: show2; property: opacity; to: 1; dur: 200; delay: 200"
    animation__up2="startEvents: show2; property: position; to: 1 1.8 0.4; dur: 200; delay: 4200"
-   animation__hide2="startEvents: show2; property: visible; to: false; delay: 10800">
+   animation__hide2="startEvents: show2; property: visible; to: false; delay: 11800">
   </a-text>
 
   <a-text class="chat"
@@ -220,20 +214,20 @@ vr-mode-ui="enabled:false" loading-screen="dotsColor: black; backgroundColor: #F
    color="white" align=right position="1 1.6 0.4"
    value="its hard to explain, but i saw oldtown
    devouring the rest of tallinn piece by
-   piece, it kinda freaks me out..."
+   piece, it kinda freaked me out..."
    animation__show2="startEvents: show2; property: opacity; to: 1; dur: 200; delay: 4500"
-   animation__up2="startEvents: show2; property: position; to: 1 1.8 0.4; dur: 200; delay: 10800"
-   animation__hide2="startEvents: show2; property: visible; to: false; delay: 15800">
+   animation__up2="startEvents: show2; property: position; to: 1 1.8 0.4; dur: 200; delay: 11800"
+   animation__hide2="startEvents: show2; property: visible; to: false; delay: 17800">
   </a-text>
 
   <a-text class="chat"
     opacity="0" line-height=55 width="1" rotation="0 -90 0"
     color="#AAFF80" align=left position="1 1.6 -0.4"
-    value="sounds like u smoked some crazy shits
+    value="sounds like u smoked some crazy shit
     from the local, bring some so i can also
     talk philosophy"
-    animation__show2="startEvents: show2; property: opacity; to: 1; dur: 200; delay: 11000"
-    animation__up2="startEvents: show2; property: position; to: 1 1.8 -0.4; dur: 200; delay: 15800"
+    animation__show2="startEvents: show2; property: opacity; to: 1; dur: 200; delay: 12000"
+    animation__up2="startEvents: show2; property: position; to: 1 1.8 -0.4; dur: 200; delay: 17800"
     animation__hide3="startEvents: show3; property: visible; to: false">
   </a-text>
 
@@ -243,19 +237,17 @@ vr-mode-ui="enabled:false" loading-screen="dotsColor: black; backgroundColor: #F
     value="actually ur idea may sell, i know
     an artist in bangkok doing this kind of
     work, i can help connect if u well"
-    animation__show2="startEvents: show2; property: opacity; to: 1; dur: 200; delay: 16000"
+    animation__show2="startEvents: show2; property: opacity; to: 1; dur: 200; delay: 18000"
     animation__up3="startEvents: show3; property: position; to: 1 1.8 -0.4; dur: 200"
     animation__hide3="startEvents: show3; property: visible; to: false; delay: 4800">
   </a-text>
 
   <a-image class="clickable" id="rep3"
    src= "#reply"
-   width="0.2" height="0.1" rotation="0 -90 0" position="0.9 -10 0"
-   visible="false"
-   animation__on2="startEvents: show2; property: position; to: 0.9 1.3 0; delay: 16500"
-   animation__show2="startEvents: show2; property: visible; to: true; delay: 17000"
+   width="0.2" height="0.1" rotation="0 -90 0" position="0.9 1.4 0" scale="0 0 0"
+   animation__on2="startEvents: show2; property: scale; to: 1 1 1; delay: 19000; dur: 100"
    animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
-   animation__hide3="startEvents: show3; property: visible; to: false"
+   animation__off3="startEvents: show3; property: scale; to: 0 0 0; dur: 100"
    re3>
   </a-image>
 
@@ -298,9 +290,8 @@ vr-mode-ui="enabled:false" loading-screen="dotsColor: black; backgroundColor: #F
   </a-text>
 
   <a-image id="out" class="clickable"
-    visible="false"
-    src= "#work"
-    animation__show3="startEvents: show2; property: visible; to: true; delay: 11000"
+    src= "#work" scale="0 0 0"
+    animation__on3="startEvents: show3; property: scale; to: 1 1 1; delay: 11000; dur: 100"
     animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
     width="0.5" height="0.5"
     position="-0.3 0.5 -2"

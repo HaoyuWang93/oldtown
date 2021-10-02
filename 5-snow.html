@@ -2,6 +2,7 @@
 <!doctype html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <title>TLL-2040/12/19</title>
 <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -62,8 +63,9 @@ function pippo(){
 })
 </script>
 
-<a-scene cursor="rayOrigin: mouse" raycaster="far: 20; interval: 1000; objects: .clickable"
-vr-mode-ui="enabled:false" loading-screen="dotsColor: black; backgroundColor: #F1F1F1">
+<a-scene raycaster="objects: .clickable" cursor="rayOrigin: mouse; fuse:false"
+loading-screen="dotsColor: black; backgroundColor: #F1F1F1">
+
   <a-entity position="0 2 -15" particle-system=
   "preset: snow; particleCount: 60000; maxAge: 1; color: #B3B3B3;
   rotationAxis: z; rotationAngle: 4; size: 8; rotationAngleSpread: 1;
@@ -72,13 +74,13 @@ vr-mode-ui="enabled:false" loading-screen="dotsColor: black; backgroundColor: #F
   </a-entity>
 
   <a-assets>
-    <img id="sky" src="images/snow.jpg">
-    <img id="phone" src="images/screen/phone194.png">
-    <img id="battery" src="images/screen/battery.png">
-    <img id="gogogo" src="images/direction/gogogo.png">
+    <img id="sky" src="images/snow.jpg" alt="background">
+    <img id="phone" src="images/screen/phone194.png" alt="phone screen">
+    <img id="battery" src="images/screen/battery.png" alt="low battery">
+    <img id="gogogo" src="images/direction/gogogo.png" alt="next page">
   </a-assets>
 
-  <a-sky id="skyid" src="#sky" rotation="0 180 0"></a-sky>
+  <a-sky src="#sky" rotation="0 180 0"></a-sky>
 
   <a-image src="#phone"
   width="0.4" height="0.4"
@@ -93,7 +95,8 @@ vr-mode-ui="enabled:false" loading-screen="dotsColor: black; backgroundColor: #F
   <a-text
    line-height=55 width="1" rotation="0 -90 0"
    color="white" align=center position="1 2 0"
-   value="...and these signal interrupters still can print...">
+   value="...and these signal interrupters still can print..."
+   animation__flash="property: opacity; from: 1; to: 0.25; dur: 1000; dir: alternate; loop: true">
   </a-text>
 
   <a-text

@@ -117,7 +117,7 @@ loading-screen="dotsColor: black; backgroundColor: #F1F1F1">
     <img id="cabin" src="images/direction/cabin.png" alt="next page">
   </a-assets>
 
-  <a-sky id="skyid" src="#sky" rotation="0 -90 0"></a-sky>
+  <a-sky src="#sky" rotation="0 -90 0"></a-sky>
 
   <a-image class="clickable" id="talkbutton"
    src= "#talk"
@@ -129,7 +129,7 @@ loading-screen="dotsColor: black; backgroundColor: #F1F1F1">
 
   <a-text class="chat"
     opacity="0" line-height=55 width="1.2" rotation="0 -90 0"
-    color="white" align=right position="1 1.8 0.1"
+    color="white" align=right position="1 1.7 0.1"
     value="We're here right on sunrise!
     Thank you for this lift, bro"
     animation__show0="startEvents: show0; property: opacity; to: 1; dur: 500"
@@ -138,7 +138,7 @@ loading-screen="dotsColor: black; backgroundColor: #F1F1F1">
 
   <a-text class="chat"
     opacity="0" line-height=55 width="1.2" rotation="0 -90 0"
-    color="#99CCFF" align=left position="1 1.8 0.2"
+    color="#99CCFF" align=left position="1 1.7 0.2"
     value="I was gonna say thank you,
     nobody wanna solo crew
     across Baltic in winter."
@@ -157,7 +157,7 @@ loading-screen="dotsColor: black; backgroundColor: #F1F1F1">
 
   <a-text class="chat"
     opacity="0" line-height=55 width="1.2" rotation="0 -90 0"
-    color="white" align=right position="1.01 1.8 0.1"
+    color="white" align=right position="1.01 1.7 0.1"
     value="so the cabins were
     designed for how many?"
     animation__show1="startEvents: show1; property: opacity; to: 1; dur: 500"
@@ -166,7 +166,7 @@ loading-screen="dotsColor: black; backgroundColor: #F1F1F1">
 
   <a-text class="chat"
     opacity="0" line-height=55 width="1.2" rotation="0 -90 0"
-    color="#99CCFF" align=left position="1.01 1.85 0.2"
+    color="#99CCFF" align=left position="1.01 1.9 0.2"
     value="20-30 from my memory;
     it's a 2015 model before
     the auto things came in..."
@@ -176,9 +176,9 @@ loading-screen="dotsColor: black; backgroundColor: #F1F1F1">
 
   <a-text class="chat"
     opacity="0" line-height=55 width="1.2" rotation="0 -90 0"
-    color="#99CCFF" align=left position="1.01 1.6 0.2"
+    color="#99CCFF" align=left position="1.01 1.65 0.2"
     value="guess how I caught up
-    with autopilot training tasks
+    with system training tasks
     before being laid off?"
     animation__show1="startEvents: show1; property: opacity; to: 1; dur: 500; delay: 5000"
     animation__hide2="startEvents: show2; property: visible; to: false">
@@ -195,7 +195,7 @@ loading-screen="dotsColor: black; backgroundColor: #F1F1F1">
 
   <a-text class="chat"
     opacity="0" line-height=55 width="1.2" rotation="0 -90 0"
-    color="white" align=right position="1.02 1.8 0.1"
+    color="white" align=right position="1.02 1.7 0.1"
     value="You told me at least
     10 times on this ride..."
     animation__show2="startEvents: show2; property: opacity; to: 1; dur: 500"
@@ -204,22 +204,29 @@ loading-screen="dotsColor: black; backgroundColor: #F1F1F1">
 
   <a-text class="chat"
     opacity="0" line-height=55 width="1.2" rotation="0 -90 0"
-    color="#99CCFF" align=left position="1.02 1.8 0.2"
+    color="#99CCFF" align=left position="1.02 1.9 0.2"
     value="Haha, my bad...
     so tell more about you,
-    I know the 90-day-annual thing
-    for E-Estonians and that
-    you can't find a winter cruise,
-    but why winter?
-    Tallinn is a ghost town right now."
+    I know the 90-day thing for
+    E-Estonians and that you
+    can't find a winter cruise,"
     animation__show2="startEvents: show2; property: opacity; to: 1; dur: 500; delay: 2000"
+    animation__hide3="startEvents: show3; property: visible; to: false">
+  </a-text>
+
+  <a-text class="chat"
+    opacity="0" line-height=55 width="1.2" rotation="0 -90 0"
+    color="#99CCFF" align=left position="1.02 1.65 0.2"
+    value="But why winter?
+    Tallinn is like a ghost town right now."
+    animation__show2="startEvents: show2; property: opacity; to: 1; dur: 500; delay: 5000"
     animation__hide3="startEvents: show3; property: visible; to: false">
   </a-text>
 
   <a-image class="clickable" id="rep3"
    src= "#proceed"
    width="0.2" height="0.1" rotation="0 -90 0" position="1 1.5 -0.05" scale="0 0 0"
-   animation__on2="startEvents: show2; property: scale; to: 1 1 1; delay: 3000; dur: 100"
+   animation__on2="startEvents: show2; property: scale; to: 1 1 1; delay: 6000; dur: 100"
    animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
    animation__off3="startEvents: show3; property: scale; to: 0 0 0; dur: 100"
    proc3>
@@ -227,20 +234,27 @@ loading-screen="dotsColor: black; backgroundColor: #F1F1F1">
 
   <a-text class="chat"
     opacity="0" line-height=55 width="1.2" rotation="0 -90 0"
-    color="white" align=right position="1.03 1.85 0.1"
+    color="white" align=right position="1.03 1.9 0.1"
     value="I was trying to avoid the
     TAU variant cases back in summer
     and now have to come before my
-    E-Residency year ends...
-    my friend there said they still
-    have Christmas events though..."
+    E-Residency year ends..."
     animation__show3="startEvents: show3; property: opacity; to: 1; dur: 500"
     animation__hide4="startEvents: show4; property: visible; to: false">
   </a-text>
 
   <a-text class="chat"
     opacity="0" line-height=55 width="1.2" rotation="0 -90 0"
-    color="#99CCFF" align=left position="1.03 1.8 0.2"
+    color="white" align=right position="1.03 1.65 0.1"
+    value="my friend there said they still
+    have Christmas events though..."
+    animation__show3="startEvents: show3; property: opacity; to: 1; dur: 500; delay: 4000"
+    animation__hide4="startEvents: show4; property: visible; to: false">
+  </a-text>
+
+  <a-text class="chat"
+    opacity="0" line-height=55 width="1.2" rotation="0 -90 0"
+    color="#99CCFF" align=left position="1.03 1.7 0.2"
     value="I see... is it true that
     you can get any drugs at
     Baltic Quarantine Resort?"
@@ -259,35 +273,48 @@ loading-screen="dotsColor: black; backgroundColor: #F1F1F1">
 
   <a-text class="chat"
     opacity="0" line-height=55 width="1.2" rotation="0 -90 0"
-    color="white" align=right position="1.04 1.85 0.1"
-    value="No, but any testing ways
+    color="white" align=right position="1.04 1.9 0.1"
+    value="No, but any test methods
     you can imagine... anyway,
     it's probably quieter than here now
-    with more robots than people.
-    I've got a cheaper cell at
-    Kopli Station for my arrival week."
+    with more robots than people."
     animation__show4="startEvents: show4; property: opacity; to: 1; dur: 500"
     animation__hide5="startEvents: show5; property: visible; to: false">
   </a-text>
 
   <a-text class="chat"
     opacity="0" line-height=55 width="1.2" rotation="0 -90 0"
-    color="#99CCFF" align=left position="1.04 1.85 0.2"
-    value="Kopli?...Man I don't know how
-    Estonia Health advertised it
-    but I'd avoid for sure.
-    Its nothing but a dump field
-    after industries closed,
-    even the Russians have left..."
-    animation__show4="startEvents: show4; property: opacity; to: 1; dur: 500; delay: 5000"
+    color="white" align=right position="1.04 1.65 0.1"
+    value="I've got a cheaper cell at
+    Kopli Station for my arrival week."
+    animation__show4="startEvents: show4; property: opacity; to: 1; dur: 500; delay: 4000"
     animation__hide5="startEvents: show5; property: visible; to: false">
   </a-text>
 
+  <a-text class="chat"
+    opacity="0" line-height=55 width="1.2" rotation="0 -90 0"
+    color="#99CCFF" align=left position="1.04 1.9 0.2"
+    value="Kopli?...Man I don't know how
+    Estonia Health advertised it
+    but I'd avoid for sure."
+    animation__show4="startEvents: show4; property: opacity; to: 1; dur: 500; delay: 6000"
+    animation__hide5="startEvents: show5; property: visible; to: false">
+  </a-text>
+
+  <a-text class="chat"
+    opacity="0" line-height=55 width="1.2" rotation="0 -90 0"
+    color="#99CCFF" align=left position="1.04 1.65 0.2"
+    value="Its nothing but a dump field
+    after industries closed,
+    even the Russians have left..."
+    animation__show4="startEvents: show4; property: opacity; to: 1; dur: 500; delay: 9000"
+    animation__hide5="startEvents: show5; property: visible; to: false">
+  </a-text>
 
     <a-image class="clickable" id="rep5"
      src= "#proceed"
      width="0.2" height="0.1" rotation="0 -90 0" position="1 1.5 -0.05" scale="0 0 0"
-     animation__on4="startEvents: show4; property: scale; to: 1 1 1; delay: 6000; dur: 100"
+     animation__on4="startEvents: show4; property: scale; to: 1 1 1; delay: 10000; dur: 100"
      animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
      animation__off5="startEvents: show5; property: scale; to: 0 0 0; dur: 100"
      proc5>
@@ -295,7 +322,7 @@ loading-screen="dotsColor: black; backgroundColor: #F1F1F1">
 
     <a-text class="chat"
       opacity="0" line-height=55 width="1.2" rotation="0 -90 0"
-      color="white" align=right position="1.05 1.85 0.1"
+      color="white" align=right position="1.05 1.7 0.1"
       value="Really? It's just 1 kilo away
       from oldtown so I thought
       it could be lively..."
@@ -304,10 +331,10 @@ loading-screen="dotsColor: black; backgroundColor: #F1F1F1">
 
     <a-text class="chat"
       opacity="0" line-height=55 width="1.2" rotation="0 -90 0"
-      color="#99CCFF" align=left position="1.05 1.8 0.2"
+      color="#99CCFF" align=left position="1.05 1.7 0.2"
       value="haha but its outside of
-      the tram belt so you won't
-      count it into oldtown, right?"
+      the tram belt so you
+      won't count it, right?"
       animation__show5="startEvents: show5; property: opacity; to: 1; dur: 500; delay: 2500">
     </a-text>
 

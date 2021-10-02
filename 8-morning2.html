@@ -2,6 +2,7 @@
 <!doctype html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <title>TLL-2040/12/20</title>
 <script src="aframe/aframe.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -46,15 +47,15 @@ z-index: 1;'>
 })
 </script>
 
-<a-scene cursor="rayOrigin: mouse" raycaster="far: 20; interval: 1000; objects: .c"
-vr-mode-ui="enabled:false" loading-screen="dotsColor: black; backgroundColor: #F1F1F1">
+<a-scene raycaster="objects: .clickable" cursor="rayOrigin: mouse; fuse:false"
+loading-screen="dotsColor: black; backgroundColor: #F1F1F1">
 
   <a-assets>
-    <img id="sky" src="images/morning2.jpg">
-    <img id="back" src="images/direction/back.png">
+    <img id="sky" src="images/morning2.jpg" alt="background">
+    <img id="back" src="images/direction/back.png" alt="next page">
   </a-assets>
 
-  <a-sky id="skyid" src="#sky" rotation="0 -90 0"></a-sky>
+  <a-sky src="#sky" rotation="0 -90 0"></a-sky>
 
   <a-text class="chat"
    line-height=55 width="1" rotation="0 0 0"
